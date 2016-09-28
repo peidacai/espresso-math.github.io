@@ -63,7 +63,7 @@ Boxplots provide a visual summary of the descriptive statistics. The range for m
 
 - Scatterplot of SAT math vs SAT verbal scores with participation rates for size of plot
 
-![Scatterplot_rate_math-verb](GA-DSI_Proj01_Scatterplot_rate_math-verb.png?raw=true)
+![Scatterplot_rate_math-verb]({{site-url}}/images/GA-DSI_Proj01_Scatterplot_rate_math-verb.png?raw=true)
 
 This plot answers the second question quite adequately, SAT scores (both math and verbal) are higher with lower participation rates and vice versa.
 
@@ -81,7 +81,7 @@ However, correlation doesn't indicate causation, so without more focused experim
 
 - Heatmap of SAT math scores across the United States
 
-![SAT_math_score_heatmap](SAT_math_score_heatmap.png?raw=true)
+![SAT_math_score_heatmap]({{site-url}}/images/SAT_math_score_heatmap.png?raw=true)
 
 The heatmap was a surprise for me. I would have expected the east coast belt (locations of the Ivy league colleges) and California to dominate with higher SAT scores. Nevertheless, it seems the central states, in particular the Midwest, were where highest SAT math scores congregated in 2001. It would be interesting to see the trend over the past 2 or 3 decades.
 
@@ -113,9 +113,9 @@ This was the first project in the 12 week Data Science bootcamp. Personally, thi
 
 - Github
 - Command line
-- Blogging: Doing it for the first time in my life.  :sweat_smile:
+- Blogging: Doing it for the first time in my life.
 
-Looking forward to starting the modelling and machine learning portions!  :bowtie:
+Looking forward to starting the modelling and machine learning portions!
 
 
 
