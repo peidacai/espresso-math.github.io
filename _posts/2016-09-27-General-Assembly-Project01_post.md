@@ -1,8 +1,9 @@
 ---
-title:        "Project01: 2001 SAT state scores across USA"
-description:  "A introductory data science project examining distribution of 2001 SAT scores in USA."
-image:        "GA-DSI_Proj01_Boxplot_math-verb.png"
-author:       "PeidaCai"
+layout: post-no-feature
+title: "Project01: 2001 SAT state scores across USA"
+description: "A introductory data science project examining distribution of 2001 SAT scores in USA."
+comments: true
+category: articles
 ---
 
 ## General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
