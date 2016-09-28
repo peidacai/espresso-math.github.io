@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
-title: "Project01: 2001 SAT state scores across USA"
-description: "A introductory data science project examining distribution of 2001 SAT scores in USA."
+title: "GA Project01"
+description: "An introductory data science project examining distribution of 2001 SAT scores in USA."
 comments: true
 category: articles
 ---
@@ -57,7 +57,7 @@ A number of plots were created to visualise the data and three were selected to 
 
 - Boxplots of SAT math and SAT verbal scores
 
-![Boxplot_math-verb](GA-DSI_Proj01_Boxplot_math-verb.png?raw=true)
+![Boxplot_math-verb]({{site-url}}/images/GA-DSI_Proj01_Boxplot_math-verb.png?raw=true)
 
 Boxplots provide a visual summary of the descriptive statistics. The range for math scores is larger than that of the verbal scores. However, the core (25th to 75th percentile) of math scores is more compact compared to verbal, indicating math scores across most states are more similar compared to verbal. While the maximum math score is higher than that of the verbal, verbal has a higher median score.
 
