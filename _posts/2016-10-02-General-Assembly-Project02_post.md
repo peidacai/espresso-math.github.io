@@ -157,35 +157,11 @@ A possible solution could be to get more data, data from years before and after.
 
 While song duration didn't feature in the original 2 problem statements, this was the only independent feature which we could use to investigate the data further (others being genre and artist, which we had earlier anticipated to generate unreliable results). Therefore, some time was devoted to a "side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
 
-![scatter_pos_vs_time_vs_peak]({{site-url}}/images/scatter_pos_vs_time_vs_peak.png)
+![unicorn_time]({{site-url}}/images/unicorn_vs_time_on_chart.png)
+
+![unicorn_pos]({{site-url}}/images/unicorn_vs_weekly_position.png)
 
 #### b. Search for the unicorns
-
-<bound method DataFrame.to_html of              Artists        Genre                  Track_name  Mean_position  \
-2      Savage Garden         Rock          I Knew I Loved You      17.363636   
-15   matchbox twenty         Rock                        Bent      18.641026   
-20     Braxton, Toni         Rock        He Wasn't Man Enough      21.000000   
-28               Joe  Rock'n'roll                I Wanna Know      21.204545   
-12  Vertical Horizon  Rock'n'roll         Everything You Want      21.439024   
-17       Hill, Faith          Rap                     Breathe      23.018868   
-24      3 Doors Down         Rock                  Kryptonite      26.471698   
-9           Lonestar      Country                      Amazed      26.727273   
-47             Nelly          Rap  (Hot S**t) Country Grammar      30.882353   
-13             Creed  Rock'n'roll         With Arms Wide Open      33.829787   
-46             Creed  Rock'n'roll                      Higher      36.859649   
-
-    Weeks_on_chart  
-2               33  
-15              39  
-20              37  
-28              44  
-12              41  
-17              53  
-24              53  
-9               55  
-47              34  
-13              47  
-46              57  >
 
 
 ### 10. Conclusion
