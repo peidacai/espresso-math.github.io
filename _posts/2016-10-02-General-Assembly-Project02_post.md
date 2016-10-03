@@ -88,7 +88,7 @@ c. Average position
     
    Therefore, a more encompassing feature would be average position, taking the sum of all positions and divided by the number of weeks on chart.
     
-    The data provided included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position accounts for these special circumstances and therefore, featured heavily in the subsequent analyses.
+   The data provided included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position accounts for these special circumstances and therefore, featured heavily in the subsequent analyses.
 
 
 ## 5. Univariate analyses
