@@ -99,6 +99,8 @@ c. Average position
 
 ## 5. Univariate analyses
 
+![Histogram_time_on_chart]({{site-url}}/images/hist_time_on_chart.png)
+
 ## 6. Bivariate Analyses
 
 ## 7. Multivariate Analyses
@@ -108,7 +110,7 @@ c. Average position
 ## 9. Conclusion
 
 
-![Boxplot_math-verb]({{site-url}}/images/GA-DSI_Proj01_Boxplot_math-verb.png?raw=true)
+
 
 
 #### Deploy and validate
