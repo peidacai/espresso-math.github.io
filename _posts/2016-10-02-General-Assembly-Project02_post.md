@@ -139,6 +139,12 @@ Songs which peaked proportionately earlier had a higher variance of stay duratio
 
 ![scatter_pos_vs_time_vs_peak]({{site-url}}/images/scatter_pos_vs_time_vs_peak.png)
 
+#### Comments:
+
+There seemed to be no discernable pattern in the plots, particularly when we zoomed into the top left quadrant (where the supposedly unicorn songs reside). There is no clear dominant color in either plot in the said area, even after zooming out and examining the plots in their entirety.
+
+A possible solution could be to get more data, data from years before and after. However, I highly suspect that it would yield much more information than it already has now, primarily because of the intuition that timing the entry to Top 100 charts or adjusting the time to peak (if that is even possible) just don't seem like plausible methods of pushing a song to becoming a unicorn.
+
 ## 8. Statistical analyses
 
 ## 9. Conclusion
