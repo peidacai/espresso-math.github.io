@@ -82,7 +82,7 @@ c. Average position
     
    While the positions on chart provide an indication of the performance of each song, it provided only a snapshot view of performance. A summation of positions could help provide a more wholesome performance view, nevertheless, this too, does not tkae into consideration the duration of stay on chart.
     
-    Therefore, a more encompassing feature would be average position, taking the sum of all positions and divided by the number of weeks on chart.
+   Therefore, a more encompassing feature would be average position, taking the sum of all positions and divided by the number of weeks on chart.
     
     The data provided included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position accounts for these special circumstances and therefore, featured heavily in the subsequent analyses.
 
@@ -125,13 +125,37 @@ This chart showed clearly that there were 2 distinct groups of songs: below 40 a
 
    The most interesting phenomenon is that songs with the best average weekly positions were not the ones which stayed on the charts the longest. We need to examine this in greater detail in the multivariate analyses later, but this indicates that there was a sweet spot of hitting average weekly position of between 20 and 40, where there was a chance of becoming "unicorns" that last more than a year on the charts.
 
+![Boxplot_peak_time]({{site-url}}/images/boxplot_time_vs_peak.png)
+
+#### Comments:
+
+The proportionate time taken to peak was binned into 2 categories "Peaked_early" and "Peaked_late". Songs which took less than half of the time they were on the charts to reach their peak were binned as "Peaked_early" while the rest were binned as "Peaked_late".
+
+Songs which peaked proportionately earlier had a higher variance of stay duration on the charts, nevertheless, they have lower median duration on charts and also a lower high compared to songs which peaked late.
+
 ## 7. Multivariate Analyses
+
+![scatter_pos_vs_time_vs_mth]({{site-url}}/images/scatter_pos_vs_time_vs_mth.png)
 
 ## 8. Statistical analyses
 
 ## 9. Conclusion
 
+We started with 2 hypotheses about the dataset:
 
+1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer.
+2. Songs that peaked quickly had lower average weekly positions.
+
+We then proceeded to load the data and clean the dataset, conduct sense-checking, added new features and filter out the features which we were interested in.
+
+Once the data was adequately cleaned, univariate, bivariate and multivariate analyses were conducted via the use of a series of visualization charts.
+
+Finally, we conducted statistical tests on both our hypotheses and found the following:
+
+1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer (over 90% confidence).
+2. Songs that peaked quickly had lower average weekly positions (over 99% confidence).
+
+While conducting the analyses, we side-tracked a little to figure out the unicorn songs in 2000 which satisfied our criteria of __staying high__ on the Top100 charts for a __long time__.
 
 
 
