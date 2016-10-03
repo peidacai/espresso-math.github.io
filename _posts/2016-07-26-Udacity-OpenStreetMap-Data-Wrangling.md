@@ -15,7 +15,7 @@ Once cleaned, data was queried using SQL for information such as number of uniqu
 ### Map Area
 
 Singapore, Singapore
-- http://overpass-api.de/api/map?bbox=103.6515,1.2177,104.1071,1.4737
+- [OpenStreetMap-Singapore](http://overpass-api.de/api/map?bbox=103.6515,1.2177,104.1071,1.4737)
 
 Singapore was chosen as it is my hometown. A manually selected box of the Singapore area was chosen (uncompressed size of file = 161.1MB). This was used instead of the predetermined Singapore area from Mapzen as it was a purely Singapore territory as opposed to the area provided in Mapzen which included Indonesian and Malaysian territories.
 
