@@ -6,7 +6,7 @@ comments: true
 category: articles
 ---
 
-## OpenStreetMap Data Wrangling
+## OpenStreetMap Data Wrangling and SQL querying
 
 In this project, geospatial data was downloaded from OpenStreetMap, an open source online map, and using python, the data was cleaned and standardized.
 
