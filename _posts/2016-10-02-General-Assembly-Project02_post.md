@@ -56,7 +56,7 @@ a. Date fields
     
 b. Genre
 
-   Some genre fields were wrongly labeled, specifically "R&B" had 2 variants (other being "R & B"). Such discrepancies were caught and corrected.
+   Some genre fields were wrongly labeled, specifically "R&B" had 2 variants (other being "R & B"). Such discrepancies were caught and corrected. Genres were quite lopsided in that over 33% of the data was classified as "Rock" and 6 out of total of 11 genres had less than 10 data points in them. Hence, genre was not examined in detail as a feature.
     
 c. Song duration
 
@@ -65,6 +65,10 @@ c. Song duration
 d. Weekly positions
 
    There were two tasks for this field: (1) Convert "string" format to "float"; (2) however, weeks without positions had "*" in them, so were changed to Numpy "NaN" instead (for ease of subsequent operations), so this was actually performed first.
+   
+e. Artists
+
+   This feature would have been a good feature for analysis, similar to genre, data here is also very lopsided, the most number of songs an artist had on the chart was 5. Most artists only had 1 song on the charts, so using "artist" as a feature may yield unreliable results.
 
 ## 4. Creating new features
 
@@ -147,7 +151,17 @@ A possible solution could be to get more data, data from years before and after.
 
 ## 8. Statistical analyses
 
-## 9. Conclusion
+## 9. Side-Quests
+
+### a. Explore effects of song duration
+
+While song duration didn't feature in the original 2 problem statements, this feature was the only independent feature which we could use to investigate the data further (others being genre and artist, which we had earlier established to generate unreliable results). Therefore, we left the main problems for a "mini side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
+
+### b. Search for the unicorns
+
+
+
+## 10. Conclusion
 
 We started with 2 hypotheses about the dataset:
 
