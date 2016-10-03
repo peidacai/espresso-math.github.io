@@ -24,9 +24,13 @@ Singapore was chosen as it is my hometown. A manually selected box of the Singap
 A sample osm file was created for initial exploration. The original code provided in class was used and modified, if necessary, provided a first glance into the data. Problems encountered in the data set can be categorised broadly into the following 5 areas.
 
 #### 1. Wrong country included in data
+
 #### 2. Wrong cities
+
 #### 3. Erroneous street types
+
 #### 4. Wrong zipcodes
+
 #### 5. Miscellaneous errors
 
 ### Problem 1: Wrong country included in data
