@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-description: sea-going, cake-selling, diaper-changing, data-sciencing
+description: went to sea, sold cakes, changed diapers, Sciencing data
 quote: "Stand aside. Giggle."
 permalink: /about/
 ---
