@@ -6,7 +6,7 @@ quote: "Stand aside. Giggle."
 permalink: /about/
 ---
 
-![Histogram_time_on_chart]({{site-url}}/images/hist_time_on_chart.png)
+![Drawing_A]({{site.url}}/images/profilepic.jpg)
 
 <center><img src = "![Drawing_A]({{site.url}}/images/profilepic.jpg)" style = "border: 1px #fff solid; border-radius: 100%; width: 30%;"></center>
 
