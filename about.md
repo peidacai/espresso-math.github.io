@@ -6,7 +6,7 @@ quote: "Stand aside. Giggle."
 permalink: /about/
 ---
 
-<center><img src = "![Drawing_A]({{site.url}}/images/profilepic.jpg)" style = "border: 1px #fff solid; border-radius: 100%; width: 30%;"></center>
+<center><img src = "{{site.url}}/images/profilepic.jpg" style = "border: 1px #fff solid; border-radius: 100%; width: 30%;"></center>
 
 <span class = "initial">"P</span>eter is a Singaporean enjoying a sojourn in New York City with his lovely wife and two beautiful daughters. He had served in the Singapore Navy for over 11 years, holding various positions. His last position being an operations officer aboard a stealth frigate. Early in his years of service, he had the good fortune of receiving a full overseas scholarship, which enabled him to spend 3 years in London pursing an Electrical and Electronic Engineering degree from Imperial college and another year in Stanford University for a Master degree in Management Science and Engineering.
 
