@@ -6,11 +6,11 @@ comments: true
 category: articles
 ---
 
-## General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
+##### General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
 
-## Project02: 2000 Billboard Top 100 songs
+### Project02: 2000 Billboard Top 100 songs
 
-## 1. Introduction
+### 1. Introduction
 
 We were provided with a dataset consisting of 2000 Billboard chart Top 100 songs. The data set consists of 317 rows with 83 columns, each row gives details of each song including:
 - artist
@@ -19,7 +19,7 @@ We were provided with a dataset consisting of 2000 Billboard chart Top 100 songs
 - weekly positions on Top 100 (from first entered to finally exiting)
 - date peaked
 
-## 2. Problem statement(s)
+### 2. Problem statement(s)
 
 My approach to creating problem statements is to adopt an industry-profitability view. To put myself in the shoes of someone in the music industry who are looking for factors of songs that maximises profitability. 
 
@@ -29,14 +29,14 @@ With this as a basis, and since this is already a Top100 dataset, the problem id
 
 2. Duration on chart
 
-$We\ want\ Top100\ songs\ that\ stay\ high\ on\ the\ charts\ for\ a\ long\ time!$
+__We want Top100 songs that stay high on the charts for a long time!__
 
-### a. Hypotheses:
+#### a. Hypotheses:
 
 1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer.
 2. Songs that peaked quickly had lower average weekly positions.
 
-### b. Assumptions and risks:
+#### b. Assumptions and risks:
 
 - All given data is accurate.
    
@@ -46,7 +46,7 @@ $We\ want\ Top100\ songs\ that\ stay\ high\ on\ the\ charts\ for\ a\ long\ time!
 
    - Billboard charts took sales + radio airplay numbers to determine the Top100 position in 2000 (paid digital download became a feature only after [2005](https://en.wikipedia.org/wiki/Billboard_charts). The assumption is that these 2 features captured the popularity of songs in entirety, even though digital formats (mp3) were already widely available then. The risk then, is that, the positions did not completely represent the popularity of the songs.
 
-## 3. Data munging
+### 3. Data munging
 
 The data was read into a python dataframe and some degree of cleaning was required in the following areas:
 
@@ -70,7 +70,7 @@ e. Artists
 
    This feature would have been a good feature for analysis, similar to genre, data here is also very lopsided, the most number of songs an artist had on the chart was 5. Most artists only had 1 song on the charts, so using "artist" as a feature may yield unreliable results.
 
-## 4. Creating new features
+### 4. Creating new features
 
 The next step was to create new features to aid analyses.
 
@@ -91,7 +91,7 @@ c. Average position
    The data provided included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position accounts for these special circumstances and therefore, featured heavily in the subsequent analyses.
 
 
-## 5. Univariate analyses
+### 5. Univariate analyses
 
 ![Histogram_time_on_chart]({{site-url}}/images/hist_time_on_chart.png)
 
@@ -107,7 +107,7 @@ Most songs had average positions near 100. Most songs clustered between 60th and
 
 The high number of songs at the 100 position should represent "above average" songs which just made it to the Top 100 but couldn't quite stay there before they were dropped altogether.
 
-## 6. Bivariate Analyses
+### 6. Bivariate Analyses
 
 ![Scatter_pos_time]({{site-url}}/images/scatter_pos_vs_time.png)
 
@@ -137,7 +137,7 @@ The proportionate time taken to peak was binned into 2 categories "Peaked_early"
 
 Songs which peaked proportionately earlier had a higher variance of stay duration on the charts, nevertheless, they have lower median duration on charts and also a lower high compared to songs which peaked late.
 
-## 7. Multivariate Analyses
+### 7. Multivariate Analyses
 
 ![scatter_pos_vs_time_vs_mth]({{site-url}}/images/scatter_pos_vs_time_vs_mth.png)
 
@@ -149,19 +149,19 @@ There seemed to be no discernable pattern in the plots, particularly when we zoo
 
 A possible solution could be to get more data, data from years before and after. However, I highly suspect that it would yield much more information than it already has now, primarily because of the intuition that timing the entry to Top 100 charts or adjusting the time to peak (if that is even possible) just don't seem like plausible methods of pushing a song to becoming a unicorn.
 
-## 8. Statistical analyses
+### 8. Statistical analyses
 
-## 9. Side-Quests
+### 9. Side-Quests
 
-### a. Explore effects of song duration
+#### a. Explore effects of song duration
 
 While song duration didn't feature in the original 2 problem statements, this feature was the only independent feature which we could use to investigate the data further (others being genre and artist, which we had earlier established to generate unreliable results). Therefore, we left the main problems for a "mini side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
 
-### b. Search for the unicorns
+#### b. Search for the unicorns
 
 
 
-## 10. Conclusion
+### 10. Conclusion
 
 We started with 2 hypotheses about the dataset:
 
@@ -179,19 +179,7 @@ Finally, we conducted statistical tests on both our hypotheses and found the fol
 
 While conducting the analyses, we side-tracked a little to figure out the unicorn songs in 2000 which satisfied our criteria of __staying high__ on the Top100 charts for a __long time__.
 
-
-
-#### Deploy and validate
-
-Not applicable for this project.
-
-#### Project conclusion and potential future work
-
-- Project conclusion
-
-
-
-#### Parting thoughts
+### Parting thoughts
 
 
 
