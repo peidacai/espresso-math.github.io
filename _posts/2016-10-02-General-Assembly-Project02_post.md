@@ -6,7 +6,7 @@ comments: true
 category: articles
 ---
 
-##### General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
+##### *General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016*
 
 ### Project02: 2000 Billboard Top 100 songs
 
@@ -29,7 +29,7 @@ With this as a basis, and since this is already a Top100 dataset, the problem id
 
 2. Duration on chart
 
-__We want Top100 songs that stay high on the charts for a long time!__
+###__We want Top100 songs that stay high on the charts for a long time!__
 
 #### a. Hypotheses:
 
