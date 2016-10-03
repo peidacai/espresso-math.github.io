@@ -6,7 +6,7 @@ comments: true
 category: articles
 ---
 
-##### *General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016*
+#### General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
 
 ### Project02: 2000 Billboard Top 100 songs
 
@@ -29,7 +29,7 @@ With this as a basis, and since this is already a Top100 dataset, the problem id
 
 2. Duration on chart
 
-###__"We want Top100 songs that stay high on the charts for a long time!"__
+__"We want Top100 songs that stay high on the charts for a long time!"__
 
 #### a. Hypotheses:
 
@@ -50,45 +50,29 @@ With this as a basis, and since this is already a Top100 dataset, the problem id
 
 The data was read into a python dataframe and some degree of cleaning was required in the following areas:
 
-a. Date fields
-
-   The data read into the dataframe were of "string" format, so all date fields were changed to pandas datetime format to facilitate further data wrangling.
+a. Date fields - Converted "string" format to pandas datetime format to facilitate further data wrangling.
     
-b. Genre
-
-   Some genre fields were wrongly labeled, specifically "R&B" had 2 variants (other being "R & B"). Such discrepancies were caught and corrected. Genres were quite lopsided in that over 33% of the data was classified as "Rock" and 6 out of total of 11 genres had less than 10 data points in them. Hence, genre was not examined in detail as a feature.
+b. Genre - Combined "R&B" and "R & B" as one. Further found genres, as a feature to be quite lopsided, with over 33% "Rock" and 6 out of total of 11 genres had less than 10 songs per genre. Hence, genre was not examined in detail as a feature.
     
-c. Song duration
+c. Song duration - Original string format of "3,38,00 AM" was cleaned using a customised function into seconds, i.e. "218.0".
 
-   When pandas read in the raw csv data, song duration turned out to be of the format "3,38,00 AM". A customised function was written for parsing, to separate minutes, seconds and milliseconds before recombining them into seconds "218.0".
-
-d. Weekly positions
-
-   There were two tasks for this field: (1) Convert "string" format to "float"; (2) however, weeks without positions had "*" in them, so were changed to Numpy "NaN" instead (for ease of subsequent operations), so this was actually performed first.
+d. Weekly positions - Converted "string" format to "float"; replaced "*" with numpy "NaN"
    
-e. Artists
-
-   This feature would have been a good feature for analysis, similar to genre, data here is also very lopsided, the most number of songs an artist had on the chart was 5. Most artists only had 1 song on the charts, so using "artist" as a feature may yield unreliable results.
+e. Artists - Similar to genre, even more lopsided. Most artists only had 1 song on the charts, artist with highest count had 5.
 
 ### 4. Creating new features
 
 The next step was to create new features to aid analyses.
 
-a. Extracting month from "date_entered" and binning them into seasons
+a. Extracting month from "date_entered" and binning them into 4 seasons
 
-   In order to answer the question on songs entering the charts in autumn, the month field was extracted from the date_entered field and binned into the 4 seasons.
+b. Time on chart - Duration on chart was extracted (date_peaked - date_entered). 
 
-b. Time on chart and time to peak
-
-   The duration taken for a song to reach its peak position was created using date_peaked - date_entered. To consider this as a proportion, this value was divided by the total time the song stayed on the charts. This was further distilled into songs that peaked early (taking less than half the time to reach its peak) and songs that peaked late.
+c. Time to peak (binned) - (Weeks to peak /duration). Separated into 2 bins: (1) peaked early (took less than half the time on chart to reach peak); (2) and songs that peaked late.
     
-c. Average position
+d. Average position - Weekly positions and sum of all positions could not account for duration on chart. A more encompassing feature, average position, was used heavily for performance analyses.
     
-   While the positions on chart provide an indication of the performance of each song, it provided only a snapshot view of performance. A summation of positions could help provide a more wholesome performance view, nevertheless, this too, does not tkae into consideration the duration of stay on chart.
-    
-   Therefore, a more encompassing feature would be average position, taking the sum of all positions and divided by the number of weeks on chart.
-    
-   The data provided included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position accounts for these special circumstances and therefore, featured heavily in the subsequent analyses.
+*The data included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position would account for these special circumstances.
 
 
 ### 5. Univariate analyses
