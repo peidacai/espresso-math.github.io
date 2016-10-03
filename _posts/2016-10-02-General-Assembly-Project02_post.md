@@ -10,7 +10,7 @@ category: articles
 
 ### 1. Introduction
 
-We were provided with a dataset consisting of 2000 Billboard chart Top 100 songs. The data set consists of 317 rows with 83 columns, each row gives details of each song including:
+We were provided with a dataset consisting of Billboard Top 100 songs in year 2000. The data set consists of 317 rows with 83 columns, each row gives details of each song including:
 - artist
 - track name
 - genre
