@@ -1,5 +1,14 @@
+---
+layout: post-no-feature
+title: "Udacity OpenStreetMap"
+description: "Cleaning geospatial data from OpenStreetMap"
+comments: true
+category: articles
+---
 
 # OpenStreetMap Data Wrangling
+
+In this project, geospatial data was downloaded from OpenStreetMap, an open source online map, and using python, the data was cleaned and standardized.
 
 ## Map Area
 
