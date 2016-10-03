@@ -54,7 +54,7 @@ b. Genre - Combined "R&B" and "R & B" as one. Further found genres, as a feature
     
 c. Song duration - Original string format of "3,38,00 AM" was cleaned using a customised function into seconds, i.e. "218.0".
 
-d. Weekly positions - Converted "string" format to "float"; replaced "*" with numpy "NaN"
+d. Weekly positions - Converted "string" format to "float"; replaced "\*" with numpy "NaN"
    
 e. Artists - Similar to genre, even more lopsided. Most artists only had 1 song on the charts, artist with highest count had 5.
 
@@ -70,7 +70,7 @@ c. Time to peak (binned) - (Weeks to peak /duration). Separated into 2 bins: (1)
     
 d. Average position - Weekly positions and sum of all positions could not account for duration on chart. A more encompassing feature, average position, was used heavily for performance analyses.
     
-*The data included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position would account for these special circumstances.
+*The data included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position would account for these special circumstances.*
 
 
 ### 5. Univariate analyses
@@ -115,8 +115,6 @@ This chart showed clearly that there were 2 distinct groups of songs: below 40 a
 
 #### Comments:
 
-The proportionate time taken to peak was binned into 2 categories "Peaked_early" and "Peaked_late". Songs which took less than half of the time they were on the charts to reach their peak were binned as "Peaked_early" while the rest were binned as "Peaked_late".
-
 Songs which peaked proportionately earlier had a higher variance of stay duration on the charts, nevertheless, they have lower median duration on charts and also a lower high compared to songs which peaked late.
 
 ### 7. Multivariate Analyses
@@ -129,7 +127,7 @@ Songs which peaked proportionately earlier had a higher variance of stay duratio
 
 There seemed to be no discernable pattern in the plots, particularly when we zoomed into the top left quadrant (where the supposedly unicorn songs reside). There is no clear dominant color in either plot in the said area, even after zooming out and examining the plots in their entirety.
 
-A possible solution could be to get more data, data from years before and after. However, I highly suspect that it would yield much more information than it already has now, primarily because of the intuition that timing the entry to Top 100 charts or adjusting the time to peak (if that is even possible) just don't seem like plausible methods of pushing a song to becoming a unicorn.
+A possible solution could be to get more data, data from years before and after. However, I highly doubt that it would yield much more information than it already has now, primarily because of the intuition that timing the entry to Top 100 charts or adjusting the time to peak (if that is even possible) just don't seem like plausible methods of pushing a song to becoming a unicorn.
 
 ### 8. Statistical analyses
 
