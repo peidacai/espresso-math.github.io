@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "Udacity OpenStreetMap"
+title: "Udacity P4"
 description: "Cleaning geospatial data from OpenStreetMap"
 comments: true
 category: articles
