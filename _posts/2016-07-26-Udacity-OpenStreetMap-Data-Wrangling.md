@@ -6,18 +6,20 @@ comments: true
 category: articles
 ---
 
-# OpenStreetMap Data Wrangling
+## OpenStreetMap Data Wrangling
 
 In this project, geospatial data was downloaded from OpenStreetMap, an open source online map, and using python, the data was cleaned and standardized.
 
-## Map Area
+Once cleaned, data was queried using SQL for information such as number of unique contributors and types and number of shops in Singapore.
+
+### Map Area
 
 Singapore, Singapore
 - http://overpass-api.de/api/map?bbox=103.6515,1.2177,104.1071,1.4737
 
 Singapore was chosen as it is my hometown. A manually selected box of the Singapore area was chosen (uncompressed size of file = 161.1MB). This was used instead of the predetermined Singapore area from Mapzen as it was a purely Singapore territory as opposed to the area provided in Mapzen which included Indonesian and Malaysian territories.
 
-## Problems Encountered in Maps
+### Problems Encountered in Maps
 
 A sample osm file was created for initial exploration. The original code provided in class was used and modified, if necessary, provided a first glance into the data. Problems encountered in the data set can be categorised broadly into the following 5 areas.
 
@@ -76,7 +78,7 @@ defaultdict(set,
               '155986468',
               '3461120954',
               '409015811'}})
-              ```
+```
 
 To prevent the case of wrongly placed "correct data" (i.e. correct city value entered into street name, correct street name entered into city field, etc), entire tag of such erroneous entries was printed out to visually inspect the entry.
 
@@ -94,7 +96,6 @@ For the second example, "Woodlands Spectrum II" should be the building name, and
 - 99862506 name --- 233
 
 
-
 - 171493307 addr:city --- Woodlands Spectrum II
 - 171493307 addr:housenumber --- 207
 - 171493307 addr:postcode --- 738958
@@ -102,6 +103,7 @@ For the second example, "Woodlands Spectrum II" should be the building name, and
 - 171493307 building --- industrial
 - 171493307 building:levels --- 5
 - 171493307 name --- Block 207
+
 
 After filtering the entries to be corrected, the rest of entries with erroneous city were collected into another set and unioned with the set of wrong country entries, to be omitted when writing to the csv files in the "shape_element" function.
 
