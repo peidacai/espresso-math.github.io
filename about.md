@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-description: The story of a Bucket
+description: sea-going, cake-baking, nappy-changing, data-sciencing
 quote: "Stand aside. Giggle."
 permalink: /about/
 ---
