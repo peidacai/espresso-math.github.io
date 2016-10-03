@@ -101,6 +101,10 @@ c. Average position
 
 ![Histogram_time_on_chart]({{site-url}}/images/hist_time_on_chart.png)
 
+
+![Histogram_avg_position]({{site-url}}/images/hist_avg_position.png)
+
+
 ## 6. Bivariate Analyses
 
 ## 7. Multivariate Analyses
