@@ -137,6 +137,8 @@ Songs which peaked proportionately earlier had a higher variance of stay duratio
 
 ![scatter_pos_vs_time_vs_mth]({{site-url}}/images/scatter_pos_vs_time_vs_mth.png)
 
+![scatter_pos_vs_time_vs_peak]({{site-url}}/images/scatter_pos_vs_time_vs_peak.png)
+
 ## 8. Statistical analyses
 
 ## 9. Conclusion
