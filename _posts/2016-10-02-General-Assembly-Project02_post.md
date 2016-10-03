@@ -19,16 +19,6 @@ We were provided with a dataset consisting of 2000 Billboard chart Top 100 songs
 - weekly positions on Top 100 (from first entered to finally exiting)
 - date peaked
 
-#### Required tasks:
-
-- Include a problem statement
-- State the risks and assumptions of the data
-- Import data using the Pandas library
-- Perform exploratory data analysis
-- Use Tableau and/or Python plotting modules to visualize data
-- Observe correlations in the data
-- Evaluate a hypothesis
-
 ## 2. Problem statement(s)
 
 My approach to creating problem statements is to adopt an industry-profitability view. To put myself in the shoes of someone in the music industry who are looking for factors of songs that maximises profitability. 
@@ -39,7 +29,7 @@ With this as a basis, and since this is already a Top100 dataset, the problem id
 
 2. Duration on chart
 
-$$We\ want\ Top100\ songs\ that\ stay\ high\ on\ the\ charts\ for\ a\ long\ time!$$
+$We\ want\ Top100\ songs\ that\ stay\ high\ on\ the\ charts\ for\ a\ long\ time!$
 
 ### a. Hypotheses:
 
@@ -62,19 +52,19 @@ The data was read into a python dataframe and some degree of cleaning was requir
 
 a. Date fields
 
-    The data read into the dataframe were of "string" format, so all date fields were changed to pandas datetime format to facilitate further data wrangling.
+   The data read into the dataframe were of "string" format, so all date fields were changed to pandas datetime format to facilitate further data wrangling.
     
 b. Genre
 
-    Some genre fields were wrongly labeled, specifically "R&B" had 2 variants (other being "R & B"). Such discrepancies were caught and corrected.
+   Some genre fields were wrongly labeled, specifically "R&B" had 2 variants (other being "R & B"). Such discrepancies were caught and corrected.
     
 c. Song duration
 
-    When pandas read in the raw csv data, song duration turned out to be of the format "3,38,00 AM". A customised function was written for parsing, to separate minutes, seconds and milliseconds before recombining them into seconds "218.0".
+   When pandas read in the raw csv data, song duration turned out to be of the format "3,38,00 AM". A customised function was written for parsing, to separate minutes, seconds and milliseconds before recombining them into seconds "218.0".
 
 d. Weekly positions
 
-    There were two tasks for this field: (1) Convert "string" format to "float"; (2) however, weeks without positions had "*" in them, so were changed to Numpy "NaN" instead (for ease of subsequent operations), so this was actually performed first.
+   There were two tasks for this field: (1) Convert "string" format to "float"; (2) however, weeks without positions had "*" in them, so were changed to Numpy "NaN" instead (for ease of subsequent operations), so this was actually performed first.
 
 ## 4. Creating new features
 
@@ -82,15 +72,15 @@ The next step was to create new features to aid analyses.
 
 a. Extracting month from "date_entered" and binning them into seasons
 
-    In order to answer the question on songs entering the charts in autumn, the month field was extracted from the date_entered field and binned into the 4 seasons.
+   In order to answer the question on songs entering the charts in autumn, the month field was extracted from the date_entered field and binned into the 4 seasons.
 
 b. Time on chart and time to peak
 
-    The duration taken for a song to reach its peak position was created using date_peaked - date_entered. To consider this as a proportion, this value was divided by the total time the song stayed on the charts. This was further distilled into songs that peaked early (taking less than half the time to reach its peak) and songs that peaked late.
+   The duration taken for a song to reach its peak position was created using date_peaked - date_entered. To consider this as a proportion, this value was divided by the total time the song stayed on the charts. This was further distilled into songs that peaked early (taking less than half the time to reach its peak) and songs that peaked late.
     
 c. Average position
     
-    While the positions on chart provide an indication of the performance of each song, it provided only a snapshot view of performance. A summation of positions could help provide a more wholesome performance view, nevertheless, this too, does not tkae into consideration the duration of stay on chart.
+   While the positions on chart provide an indication of the performance of each song, it provided only a snapshot view of performance. A summation of positions could help provide a more wholesome performance view, nevertheless, this too, does not tkae into consideration the duration of stay on chart.
     
     Therefore, a more encompassing feature would be average position, taking the sum of all positions and divided by the number of weeks on chart.
     
@@ -101,11 +91,39 @@ c. Average position
 
 ![Histogram_time_on_chart]({{site-url}}/images/hist_time_on_chart.png)
 
+#### Comments:
+
+An overwhelming number of songs stayed on the chart for about 20 weeks. However, the distribution is rather positively skewed. More songs stayed less than 20 weeks compared to longer-lived "unicorns".
 
 ![Histogram_avg_position]({{site-url}}/images/hist_avg_position.png)
 
+#### Comments:
+
+Most songs had average positions near 100. Most songs clustered between 60th and 100th positions. There was a small "unicorn" cluster from 10th to 30th position.
+
+The high number of songs at the 100 position should represent "above average" songs which just made it to the Top 100 but couldn't quite stay there before they were dropped altogether.
 
 ## 6. Bivariate Analyses
+
+![Scatter_pos_time]({{site-url}}/images/scatter_pos_vs_time.png)
+
+#### Comments:
+
+This chart showed clearly that there were 2 distinct groups of songs: below 40 and above 40 in average weekly position.
+
+- Must stay below 40th average position
+
+   In the group with average position above 40, we see clearly that songs that fell within this group almost certainly did not stay on the chart for more than 20 weekly (with the exception of a few outliers). Even for those that made it past 20 weeks, the longest any song stayed was about 30 weeks.
+    
+
+- Lowest average position = best songs?
+
+   When we observe the density of the blue dots, we note the clear median line at 20 weeks on chart (dark blue area, i.e. more songs overlap here). In the upper left quadrant, we note a small group of song cluster around average position of 20 but only stayed on the charts for about 40 weeks.
+    
+
+- So, where are the unicorns?
+
+   The most interesting phenomenon is that songs with the best average weekly positions were not the ones which stayed on the charts the longest. We need to examine this in greater detail in the multivariate analyses later, but this indicates that there was a sweet spot of hitting average weekly position of between 20 and 40, where there was a chance of becoming "unicorns" that last more than a year on the charts.
 
 ## 7. Multivariate Analyses
 
