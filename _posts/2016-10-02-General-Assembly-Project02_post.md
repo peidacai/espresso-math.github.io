@@ -6,8 +6,6 @@ comments: true
 category: articles
 ---
 
-#### General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
-
 ### Project02: 2000 Billboard Top 100 songs
 
 ### 1. Introduction
