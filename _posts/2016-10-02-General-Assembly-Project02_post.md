@@ -6,9 +6,6 @@ comments: true
 category: articles
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-<script src="ASCIIMathML.js"></script>
-
 ### Project02: 2000 Billboard Top 100 songs
 
 ### 1. Introduction
