@@ -10,6 +10,8 @@ category: articles
 
 ### 1. Introduction
 
+$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
+
 We were provided with a dataset consisting of Billboard Top 100 songs in year 2000. The data set consists of 317 rows with 83 columns, each row gives details of each song including:
 - artist
 - track name
