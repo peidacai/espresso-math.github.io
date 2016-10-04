@@ -133,9 +133,9 @@ A possible solution could be to get more data, data from years before and after.
 
 Normality checks were conducted for both the average_position and time_on_chart distributions and both were shown to be highly unlikely normally distributed. Therefore, the resampling-shuffle test was conducted on both distribution, with 10,000 trials of random shuffling of labels.
 
-- The mean number of weeks on chart difference between autumn songs and other songs was about 1.76 weeks, with corresponding p-value of 0.0712, statistically significant at \alpha = 10%.
+- The mean number of weeks on chart difference between autumn songs and other songs was about 1.76 weeks, with corresponding p-value of 0.0712, statistically significant at &alpha = 10%.
 
-- The difference in average position between songs which peaked late and peaked early was 9.84 positions, with corresponding p-value of 0.0003, statistically significant at \alpha = 1%.
+- The difference in average position between songs which peaked late and peaked early was 9.84 positions, with corresponding p-value of 0.0003, statistically significant at &alpha = 1%.
 
 ### 9. Side-Quests
 
@@ -157,7 +157,7 @@ __"Keep songs shorter than 250 seconds!"__
 
 ### 10. Conclusion and parting thoughts
 
-1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer (@ \alpha = 0.10).
-2. Songs that peaked quickly had better average weekly positions (@ \alpha = 0.01).
+1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer (@ &alpha = 0.10).
+2. Songs that peaked quickly had better average weekly positions (@ &alpha = 0.01).
 3. *Avoid making songs over 250 seconds*
 
