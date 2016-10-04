@@ -151,13 +151,13 @@ Although it was not clear on either charts that song duration was a determining 
 
 __"Keep songs shorter than 250 seconds!"__
 
-#### b. Which were the 2000 unicorns?
+#### b. Which were the unicorns in 2000?
 
 ![unicorn_table]({{site-url}}/images/unicorn_df.png)
 
 ### 10. Conclusion and parting thoughts
 
 1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer (@ &alpha = 0.10).
-2. Songs that peaked quickly had better average weekly positions (@ \( \alpha \ A \) = 0.01).
-3. *Avoid making songs over 250 seconds*
+2. Songs that peaked quickly had better average weekly positions (@ \( {\alpha} ) = 0.01).
+3. Avoid making songs over 250 seconds.
 
