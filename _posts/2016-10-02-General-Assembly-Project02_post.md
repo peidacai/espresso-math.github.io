@@ -5,6 +5,9 @@ description: "Exploratory data analysis using Python on Year 2000 Billboard Top 
 comments: true
 category: articles
 ---
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 ### Project02: 2000 Billboard Top 100 songs
 
