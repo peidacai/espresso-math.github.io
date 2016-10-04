@@ -125,11 +125,17 @@ Songs which peaked proportionately earlier had a higher variance of stay duratio
 
 #### Comments:
 
-There seemed to be no discernable pattern in the plots, particularly when we zoomed into the top left quadrant (where the supposedly unicorn songs reside). There is no clear dominant color in either plot in the said area, even after zooming out and examining the plots in their entirety.
+There seemed to be no discernable pattern in the plots, particularly when we zoomed into the top left quadrant (where the supposedly unicorn songs reside). There is no clear dominant color in either plot in the said area or otherwise.
 
 A possible solution could be to get more data, data from years before and after. However, I highly doubt that it would yield much more information than it already has now, primarily because of the intuition that timing the entry to Top 100 charts or adjusting the time to peak (if that is even possible) just don't seem like plausible methods of pushing a song to becoming a unicorn.
 
 ### 8. Statistical analyses
+
+Normality checks were conducted for both the average_position and time_on_chart distributions and both were shown to be highly unlikely normally distributed. Therefore, the resampling-shuffle test was conducted on both distribution, with 10,000 trials of random shuffling of labels.
+
+- The mean number of weeks on chart difference between autumn songs and other songs was about 1.76 weeks, with corresponding p-value of 0.0712, statistically significant at \alpha = 10%.
+
+- The difference in average position between songs which peaked late and peaked early was 9.84 positions, with corresponding p-value of 0.0003, statistically significant at \alpha = 1%.
 
 ### 9. Side-Quests
 
@@ -141,33 +147,17 @@ While song duration didn't feature in the original 2 problem statements, this wa
 
 ![unicorn_pos]({{site-url}}/images/unicorn_vs_weekly_position.png)
 
-#### b. Search for the unicorns
+Although it was not clear on either charts that song duration was a determining factor for unicorn songs, there was a useful takeaway. Songs over about 250 seconds (4 min 10 seconds), almost never made it longer than 22 weeks on Top100 and almost never made it better than average position of 38.
 
+__"Keep songs shorter than 250 seconds!"__
 
-### 10. Conclusion
+#### b. Which were the 2000 unicorns?
 
-We started with 2 hypotheses about the dataset:
+![unicorn_table]({{site-url}}/images/unicorn_df.png)
 
-1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer.
-2. Songs that peaked quickly had lower average weekly positions.
+### 10. Conclusion and parting thoughts
 
-We then proceeded to load the data and clean the dataset, conduct sense-checking, added new features and filter out the features which we were interested in.
+1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer (@ \alpha = 0.10).
+2. Songs that peaked quickly had better average weekly positions (@ \alpha = 0.01).
+3. *Avoid making songs over 250 seconds*
 
-Once the data was adequately cleaned, univariate, bivariate and multivariate analyses were conducted via the use of a series of visualization charts.
-
-Finally, we conducted statistical tests on both our hypotheses and found the following:
-
-1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer (over 90% confidence).
-2. Songs that peaked quickly had lower average weekly positions (over 99% confidence).
-
-While conducting the analyses, we side-tracked a little to figure out the unicorn songs in 2000 which satisfied our criteria of __staying high__ on the Top100 charts for a __long time__.
-
-### Parting thoughts
-
-
-
-
-
-
-
-     
