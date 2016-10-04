@@ -10,7 +10,8 @@ category: articles
 
 ### 1. Introduction
 
-We were provided with a dataset consisting of Billboard Top 100 songs in year 2000. The data set consists of 317 rows with 83 columns, each row gives details of each song including:
+A dataset consisting of Billboard Top 100 songs in year 2000 was provided, consisting of 317 rows with 83 columns, each row provided details of each song including:
+
 - artist
 - track name
 - genre
@@ -27,7 +28,7 @@ With this as a basis, and since this is already a Top100 dataset, the problem id
 
 2. Duration on chart
 
-__"We want Top100 songs that stay high on the charts for a long time!"__
+__"Top100 songs that stay high on the charts for a long time = Good"__
 
 #### a. Hypotheses:
 
@@ -99,23 +100,23 @@ This chart showed clearly that there were 2 distinct groups of songs: below 40 a
 
 - Must stay below 40th average position
 
-   In the group with average position above 40, we see clearly that songs that fell within this group almost certainly did not stay on the chart for more than 20 weekly (with the exception of a few outliers). Even for those that made it past 20 weeks, the longest any song stayed was about 30 weeks.
+   In the group with average position above 40, it was clear that songs that fell within this group almost certainly did not stay on the chart for more than 20 weekly (with the exception of a few outliers). Even for those that made it past 20 weeks, the longest any song stayed was about 30 weeks.
     
 
 - Lowest average position = best songs?
 
-   When we observe the density of the blue dots, we note the clear median line at 20 weeks on chart (dark blue area, i.e. more songs overlap here). In the upper left quadrant, we note a small group of song cluster around average position of 20 but only stayed on the charts for about 40 weeks.
+   There was a clear median line at 20 weeks on chart (dark blue area, i.e. more songs overlap here). In the upper left quadrant, there was also a small group of song cluster around average position of 20 but only stayed on the charts for about 40 weeks.
     
 
 - So, where are the unicorns?
 
-   The most interesting phenomenon is that songs with the best average weekly positions were not the ones which stayed on the charts the longest. We need to examine this in greater detail in the multivariate analyses later, but this indicates that there was a sweet spot of hitting average weekly position of between 20 and 40, where there was a chance of becoming "unicorns" that last more than a year on the charts.
+   The most interesting phenomenon was that songs with the best average weekly positions were not the ones which stayed on the charts the longest. This indicated that there was a sweet spot of hitting average weekly position of between 20 and 40, where there was a chance of becoming "unicorns" that last more than a year on the charts.
 
 ![Boxplot_peak_time]({{site-url}}/images/boxplot_time_vs_peak.png)
 
 #### Comments:
 
-Songs which peaked proportionately earlier had a higher variance of stay duration on the charts, nevertheless, they have lower median duration on charts and also a lower high compared to songs which peaked late.
+Songs which peaked proportionately earlier had a higher variance of stay duration on the charts, nevertheless, they had lower median duration on charts and also a lower high compared to songs which peaked late.
 
 ### 7. Multivariate Analyses
 
@@ -125,7 +126,7 @@ Songs which peaked proportionately earlier had a higher variance of stay duratio
 
 #### Comments:
 
-There seemed to be no discernable pattern in the plots, particularly when we zoomed into the top left quadrant (where the supposedly unicorn songs reside). There is no clear dominant color in either plot in the said area or otherwise.
+There seemed to be no discernable pattern in the plots, particularly in the top left quadrant (where the supposedly unicorn songs reside). There was no clear dominant color in either plot in the said area or otherwise.
 
 A possible solution could be to get more data, data from years before and after. However, I highly doubt that it would yield much more information than it already has now, primarily because of the intuition that timing the entry to Top 100 charts or adjusting the time to peak (if that is even possible) just don't seem like plausible methods of pushing a song to becoming a unicorn.
 
@@ -133,15 +134,15 @@ A possible solution could be to get more data, data from years before and after.
 
 Normality checks were conducted for both the average_position and time_on_chart distributions and both were shown to be highly unlikely normally distributed. Therefore, the resampling-shuffle test was conducted on both distribution, with 10,000 trials of random shuffling of labels.
 
-- The mean number of weeks on chart difference between autumn songs and other songs was about 1.76 weeks, with corresponding p-value of 0.0712, statistically significant at \alpha = 10%.
+- The mean number of weeks on chart difference between autumn songs and other songs was about 1.76 weeks, with corresponding p-value of 0.0712, statistically significant at alpha = 10%.
 
-- The difference in average position between songs which peaked late and peaked early was 9.84 positions, with corresponding p-value of 0.0003, statistically significant at \alpha = 1%.
+- The difference in average position between songs which peaked late and peaked early was 9.84 positions, with corresponding p-value of 0.0003, statistically significant at alpha = 1%.
 
 ### 9. Side-Quests
 
 #### a. Explore effects of song duration
 
-While song duration didn't feature in the original 2 problem statements, this was the only independent feature which we could use to investigate the data further (others being genre and artist, which we had earlier anticipated to generate unreliable results). Therefore, some time was devoted to a "side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
+While song duration didn't feature in the original 2 problem statements, this was the only independent feature which could be used to investigate the data further (others being genre and artist, which were earlier discredited as features). Therefore, some time was devoted to a "side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
 
 ![unicorn_time]({{site-url}}/images/unicorn_vs_time_on_chart.png)
 
@@ -157,7 +158,7 @@ __"Keep songs shorter than 250 seconds!"__
 
 ### 10. Conclusion and parting thoughts
 
-1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer, @ \alpha = 0.10).
-2. Songs that peaked quickly had better average weekly positions, @ \alpha = 0.01).
-3. _Avoid making songs over 250 seconds._
+1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer, @ alpha = 0.10).
+2. Songs that peaked quickly had better average weekly positions, @ alpha = 0.01).
+3. _Avoid making songs longer than 250 seconds._
 
