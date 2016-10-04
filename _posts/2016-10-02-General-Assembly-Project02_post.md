@@ -136,7 +136,7 @@ A possible solution could be to get more data, data from years before and after.
 
 Normality checks were conducted for both the average_position and time_on_chart distributions and both were shown to be highly unlikely normally distributed. Therefore, the resampling-shuffle test was conducted on both distribution, with 10,000 trials of random shuffling of labels.
 
-$H$_o$: On average, songs which entered Top100 in Autumn lasted longer on the Top 100 than songs which entered in other seasons.$
+H$_o$: On average, songs which entered Top100 in Autumn lasted longer on the Top 100 than songs which entered in other seasons.
 
 H$_a$: On average, songs which entered Top100 in Autumn did not last longer on the Top 100 than songs which entered in other seasons.
 
