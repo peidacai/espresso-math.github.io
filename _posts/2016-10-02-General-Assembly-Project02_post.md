@@ -71,7 +71,7 @@ c. Time to peak (binned) - (Weeks to peak /duration). Separated into 2 bins: (1)
     
 d. Average position - Weekly positions and sum of all positions could not account for duration on chart. A more encompassing feature, average position, was used heavily for performance analyses.
     
-*The data included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position would account for these special circumstances.*
+   The data included all songs that were present on the charts during the calendar year of 2000. This meant that it included songs which entered in 1999 and continued into 2000, similarly songs which continued into 2001, as well as songs which left and re-entered. The use of average position would account for these special circumstances.
 
 
 ### 5. Univariate analyses
@@ -142,7 +142,7 @@ Normality checks were conducted for both the average_position and time_on_chart 
 
 #### a. Explore effects of song duration
 
-While song duration didn't feature in the original 2 problem statements, this was the only independent feature which could be used to investigate the data further (others being genre and artist, which were earlier discredited as features). Therefore, some time was devoted to a "side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
+While song duration didn't feature in the original 2 problem statements, this was the only independent feature which could be used to investigate the data further (others being genre and artist, which were discredited earlier). Therefore, some time was devoted to a "side-quest" to investigate this feature further, in the hope that it could help unlock the factors to finding a unicorn song.
 
 ![unicorn_time]({{site-url}}/images/unicorn_vs_time_on_chart.png)
 
@@ -160,5 +160,6 @@ __"Keep songs shorter than 250 seconds!"__
 
 1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer, @ alpha = 0.10).
 2. Songs that peaked quickly had better average weekly positions, @ alpha = 0.01).
-3. _Avoid making songs longer than 250 seconds._
+3. Avoid making songs longer than 250 seconds.
 
+It was admitted difficult to pinpoint features or factors which propelled a song into "unicorn" status in 2000 and I am under no illusion that it would be any more straightforward in 2016. A dataset with more features could perhaps shed more light in this aspect, additional features such as marketing amount spent on song, production costs, time taken to produce the song, number of concerts with song before entering and after entering could perhaps be more interesting from the cost versus profit perspective.
