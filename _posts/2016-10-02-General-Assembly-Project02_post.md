@@ -5,9 +5,7 @@ description: "Exploratory data analysis using Python on Year 2000 Billboard Top 
 comments: true
 category: articles
 ---
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+
 
 ### Project02: 2000 Billboard Top 100 songs
 
@@ -161,7 +159,7 @@ __"Keep songs shorter than 250 seconds!"__
 
 ### 10. Conclusion and parting thoughts
 
-1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer, @ \(alpha\) = 0.10).
+1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer, @ \[alpha\] \[alpha\] = 0.10).
 2. Songs that peaked quickly had better average weekly positions, @ `\alpha` = 0.01).
 3. Avoid making songs longer than 250 seconds.
 
