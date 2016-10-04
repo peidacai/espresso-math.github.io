@@ -4,6 +4,7 @@ title: "GA Project02"
 description: "Exploratory data analysis using Python on Year 2000 Billboard Top 100 chart"
 comments: true
 category: articles
+mathjax: true
 ---
 
 
