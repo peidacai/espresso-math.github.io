@@ -53,13 +53,13 @@ The data was read into a python dataframe and some degree of cleaning was requir
 
 a. Date fields - Converted "string" format to pandas datetime format to facilitate further data wrangling.
     
-b. Genre - Combined "R&B" and "R & B" as one. Further found genres, as a feature to be quite lopsided, with over 33% "Rock" and 6 out of total of 11 genres had less than 10 songs per genre. Hence, genre was not examined in detail as a feature.
+b. Genre - Combined "R&B" and "R & B" as one. Further found genres, as a feature to be very imbalance, with over 33% "Rock" and 6 out of total of 11 genres had less than 10 songs per genre. Hence, genre was not examined in detail as a feature.
     
 c. Song duration - Original string format of "3,38,00 AM" was cleaned using a customised function into seconds, i.e. "218.0".
 
 d. Weekly positions - Converted "string" format to "float"; replaced "\*" with numpy "NaN"
    
-e. Artists - Similar to genre, even more lopsided. Most artists only had 1 song on the charts, artist with highest count had 5.
+e. Artists - Similar to genre, even more imbalance. Most artists only had 1 song on the charts, artist with highest count had 5.
 
 ### 4. Creating new features
 
