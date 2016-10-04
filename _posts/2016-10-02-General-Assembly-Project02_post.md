@@ -159,7 +159,7 @@ __"Keep songs shorter than 250 seconds!"__
 ### 10. Conclusion and parting thoughts
 
 1. Songs that entered Top100 during autumn months (Sep, Oct and Nov) stayed in Top100 longer, @ alpha = 0.10).
-2. Songs that peaked quickly had better average weekly positions, @ \&#913 = 0.01). \U+03B1 \&#945
+2. Songs that peaked quickly had better average weekly positions, @ [:ascii:]&#913 = 0.01).
 3. Avoid making songs longer than 250 seconds.
 
 It was admitted difficult to pinpoint features or factors which propelled a song into "unicorn" status in 2000 and I am under no illusion that it would be any more straightforward in 2016. A dataset with more features could perhaps shed more light in this aspect, additional features such as marketing amount spent on song, production costs, time taken to produce the song, number of concerts with song before entering and after entering could perhaps be more interesting from the cost versus profit perspective.
