@@ -136,6 +136,8 @@ A possible solution could be to get more data, data from years before and after.
 
 Normality checks were conducted for both the average_position and time_on_chart distributions and both were shown to be highly unlikely normally distributed. Therefore, the resampling-shuffle test was conducted on both distribution, with 10,000 trials of random shuffling of labels.
 
+#### a. Autumn songs stayed longer?
+
 H$_o$: On average, songs which entered Top100 in Autumn lasted longer on the Top 100 than songs which entered in other seasons.
 
 H$_a$: On average, songs which entered Top100 in Autumn did not last longer on the Top 100 than songs which entered in other seasons.
@@ -145,6 +147,8 @@ $$H_o: $\mu_{autumn} - $\mu_{others} > 0$$
 $$H_a: $\mu_{autumn} - $\mu_{others} <= 0$$
 
 - The mean number of weeks on chart difference between autumn songs and other songs was about 1.76 weeks, with corresponding p-value of 0.0712, statistically significant at $\alpha$ = 10%.
+
+#### b. Songs which peaked earlier reached higher?
 
 H$_o$: Average position of songs which peaked early was better than average position of songs which peaked later.
 
