@@ -6,6 +6,8 @@ comments: true
 category: articles
 ---
 
+![SAT]({{site-url}}/images/SATScore.png)
+
 ## General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
 
 ### Project01: 2001 SAT state scores across USA
