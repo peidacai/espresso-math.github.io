@@ -5,6 +5,7 @@ description: "Cleaning geospatial data from OpenStreetMap"
 comments: true
 category: articles
 ---
+![SGP_OSM]({{site-url}}/images/sgp_osm.png)
 
 ## OpenStreetMap Data Wrangling and SQL querying
 
