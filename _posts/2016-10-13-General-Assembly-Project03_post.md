@@ -7,8 +7,10 @@ category: articles
 mathjax: true
 ---
 
+![whiskey]({{site-url}}/images/whiskey.png)
 
-### Project02: 2000 Billboard Top 100 songs
+### Project03: Predicting IOWA liquor sales
+
 
 ### 1. Introduction
 
