@@ -6,7 +6,7 @@ comments: true
 category: articles
 ---
 
-![SAT]({{site-url}}/images/SATScore.png)
+![SAT]({{site-url}}/images/SATscore.png)
 
 ## General Assembly (NYC) Data Science Immersive Bootcamp Sep-Dec 2016
 
