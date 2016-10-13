@@ -6,7 +6,7 @@ comments: true
 category: articles
 mathjax: true
 ---
-
+![billboard]({{site-url}}/images/billboard.png)
 
 ### Project02: 2000 Billboard Top 100 songs
 
