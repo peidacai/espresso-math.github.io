@@ -17,12 +17,13 @@ In this project, the task was to conduct market research as a data scientist, an
 
    - Identify suitable locations for a liquor store owner's expansion plans
    - Create a model to predict future sales
-   - Recommend target for bottles sold and average bottle price
+   - Recommend targets for bottles sold and average bottle price
 
 ### 2. Data exploration
 
 The data provided had the following characteristics:
 
+- Filesize: over 330 MB (csv)
 - Columns: 18
 - Rows: 2,709,551
 
