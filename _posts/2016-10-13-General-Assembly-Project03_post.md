@@ -13,7 +13,7 @@ mathjax: true
 
 ### 1. Introduction
 
-In this project, the task was to conduct market research through the lens of a data scientist, and recommend locations for a new liquor store in IOWA state. 2015 and 2016 Q1 statewide liquor store transactional data was provided for the researchand there were 3 sub-tasks:
+In this project, the task was to conduct market research as a data scientist, and recommend locations for a new liquor store in IOWA state. 2015 and 2016 Q1 statewide liquor store transactional data was provided for the research and there were 3 sub-tasks:
 
    - Identify suitable locations for a liquor store owner's expansion plans
    - Create a model to predict future sales
@@ -50,31 +50,31 @@ After cleaning the data, county demographic data (dated 2010) were used to suppl
 
 For example, a county with large land area and a low number of stores could be thought of as a good candidate, since it could mean that the area is underserved, liquor-wise. Similar arguments could be made for high population per store, since it would mean each store can serve a higher number of customers.
 
-![pop_vs_median_sales]({{site-url}}/images/blob_population_vs_median.png)
-
-Nevertheless, such simplistic analyses would be proven misguided with data below. In theory though, without deeper geographical and demographical understanding of each county in IOWA, it would not be sound to make such conclusion. As a wise man once said, 
+Nevertheless, such simplistic analysis would be proven misguided with data below. As a wise man once said, 
 
 __"Let the data be the arbituer of truth."__
 
-![area_vs_median_sales]({{site-url}}/images/blob_area_vs_median.png)
+![pop_vs_median_sales]({{site-url}}/images/blob_population_vs_median.png)
 
-Counties with high population per store may not contain higher proportion of target customers nor should larger land area necessarily connote bigger market. No liquor retailer would want to set up shop in the middle of a desert, serving a large land area.
+These 2 plots showed counties with the highest population per store and largest county land area per store (denoted by size of circles). However, the best performing counties (darkest blue) were not the largest circles.
+
+![area_vs_median_sales]({{site-url}}/images/blob_area_vs_median.png)
 
 #### Skewed sales data
 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
-The (poorly charted) histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$ 9 million, however, the majority of the stores only raked in \$ 200,000 in 2015.
+This poorly charted histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$ 9 million, contrast this with the majority of the stores raking in only \$ 200,000 in 2015.
 
-With this in mind, median (instead of mean) was used as average indicator to better represent the average sales performance per store across IOWA.
+With this in mind, median (instead of mean) was used to calculate average to better represent the data.
 
 ### 5. Locations recommendation
 
-We examined all 99 counties across the state of IOWA and selected 2 counties as possible locations depending on the client's requirement.
+We examined all 99 counties across the state of IOWA and selected 2 counties with 2 very different expansion strategy.
 
 #### a. Large-scale expansion
 
-For a large scale expansion (annual revenue of ~ \$9 million per store), which requires access to a large market base, we recommended Polk County for the following reasons:
+For a large scale expansion (annual target revenue of up to \$\ 9 million per store), which requires access to a large market base, we recommended Polk County for the following reasons:
 
    - Top county for total sales, i.e. largest market
    - Top county for total bottle sold per store
@@ -89,7 +89,7 @@ The chart above showed that Polk county, in 2015, was the overwhelming leader in
 
 ![top_sales_median_per_store]({{site-url}}/images/top10_counties_total_sales_bar.png)
 
-#### a. Large-scale expansion
+#### b. Average expansion
 
 For an average store expansion plan (annual target revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
 
