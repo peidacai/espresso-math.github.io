@@ -52,7 +52,7 @@ For example, a county with large land area and a low number of stores could be t
 
 Nevertheless, such simplistic analyses would be proven misguided with data below. In theory though, without deeper geographical and demographical understanding of each county in IOWA, it would not be sound to make such conclusion. As a wise man once said, 
 
-$$"Let the data be the arbituer of the truth."$$
+__"Let the data be the arbituer of the truth."__
 
 High population may not contain higher proportion of target customers nor should larger land area connote bigger market. No liquor retailer would want to set up shop in the middle of a desert, serving a large land area.
 
