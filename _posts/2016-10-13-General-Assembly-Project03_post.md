@@ -52,24 +52,25 @@ After cleaning the data, county demographic data (dated 2010) were used to suppl
 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
-The (poorly charted) histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$\ 9 million, however, the majority of the stores only raked in \$200,000 in 2015.
+The (poorly charted) histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about $9 million, however, the majority of the stores only raked in $200,000 in 2015.
 
 With this in mind, median (instead of mean) was used as average indicator to better represent the average sales performance per store across IOWA.
 
-1) Location recommendation
+### 5. Locations recommendation
 
 We examined all 99 counties across the state of IOWA and selected 2 counties as possible locations depending on the client's requirement.
 
 ![top_median_sales]({{site-url}}/images/top10_median_sales.png)
 
-For a typical store expansion plan (annual revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
+For an average store expansion plan (annual target revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
+
    - Top county for average sale per store
    - Top county for average bottle sold per store
    - 97th percentile for average bottle price
    - 97th percentile for average bottle profit
    - 68th percentile for average number of transactions per store
    - 46th percentile for mean bottles per transaction
-   - Recommended average price per bottle ~ \$15.50
+   - Recommended average price per bottle ~ $15.50
    - Recommended annual bottles sold ~ 21,000 bottles
    
 For a large scale expansion (annual revenue of ~ \$9mil per store), which requires access to a large market base, we recommended Polk County for the following reasons:
