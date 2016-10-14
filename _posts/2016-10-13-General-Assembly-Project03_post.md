@@ -48,11 +48,21 @@ All columns were munged and cleaned. Cleaning process included:
 
 After cleaning the data, county demographic data (dated 2010) were used to supplement the existing dataset in search of a richer analysis. However, without detailed demographic data (such as age groups, gender, income range, etc), using simple land area per store and population per store yielded little value.
 
+For example, a county with large land area and a low number of stores could be thought of as a good candidate, since it could mean that the area is underserved, liquor-wise. Similar arguments could be made for high population per store, since it would mean each store can serve a higher number of customers.
+
+Nevertheless, such simplistic analyses would be proven misguided with data below. In theory though, without deeper geographical and demographical understanding of each county in IOWA, it would not be sound to make such conclusion. As a wise man once said, 
+
+$$"Let the data be the arbituer of the truth."$$
+
+High population may not contain higher proportion of target customers nor should larger land area connote bigger market. No liquor retailer would want to set up shop in the middle of a desert, serving a large land area.
+
+
+
 #### Skewed sales data
 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
-The (poorly charted) histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about $9 million, however, the majority of the stores only raked in $200,000 in 2015.
+The (poorly charted) histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$ 9 million, however, the majority of the stores only raked in \$ 200,000 in 2015.
 
 With this in mind, median (instead of mean) was used as average indicator to better represent the average sales performance per store across IOWA.
 
