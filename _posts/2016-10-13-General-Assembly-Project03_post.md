@@ -65,7 +65,7 @@ These 2 plots showed counties with the highest population per store and largest 
 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
-This poorly charted histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million, contrasted with the majority of stores raking in only \$200,000 in 2015.
+This poorly charted histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million. The majority of stores raking in an average of only \$200,000 in 2015.
 
 With this in mind, median (instead of mean) was used to calculate average to better represent the data.
 
