@@ -50,13 +50,15 @@ After cleaning the data, county demographic data (dated 2010) were used to suppl
 
 For example, a county with large land area and a low number of stores could be thought of as a good candidate, since it could mean that the area is underserved, liquor-wise. Similar arguments could be made for high population per store, since it would mean each store can serve a higher number of customers.
 
+![pop_vs_median_sales]({{site-url}}/images/blob_population_vs_median.png)
+
 Nevertheless, such simplistic analyses would be proven misguided with data below. In theory though, without deeper geographical and demographical understanding of each county in IOWA, it would not be sound to make such conclusion. As a wise man once said, 
 
-__"Let the data be the arbituer of the truth."__
+__"Let the data be the arbituer of truth."__
 
-High population may not contain higher proportion of target customers nor should larger land area connote bigger market. No liquor retailer would want to set up shop in the middle of a desert, serving a large land area.
+![area_vs_median_sales]({{site-url}}/images/blob_area_vs_median.png)
 
-
+Counties with high population per store may not contain higher proportion of target customers nor should larger land area necessarily connote bigger market. No liquor retailer would want to set up shop in the middle of a desert, serving a large land area.
 
 #### Skewed sales data
 
@@ -70,7 +72,24 @@ With this in mind, median (instead of mean) was used as average indicator to bet
 
 We examined all 99 counties across the state of IOWA and selected 2 counties as possible locations depending on the client's requirement.
 
-![top_median_sales]({{site-url}}/images/top10_median_sales.png)
+#### a. Large-scale expansion
+
+For a large scale expansion (annual revenue of ~ \$9 million per store), which requires access to a large market base, we recommended Polk County for the following reasons:
+
+   - Top county for total sales, i.e. largest market
+   - Top county for total bottle sold per store
+   - Top county for total number of transactions
+   - 54th percentile for average bottle price and average bottle profit
+   - Recommended average price per bottle ~ \$19
+   - Recommended annual bottle sold ~ 500,000 bottles
+   
+![top_sales]({{site-url}}/images/top10_counties_total_sales_bar.png)
+
+The chart above showed that Polk county, in 2015, was the overwhelming leader in terms of sales volume. Linn county, the second highest, came in at less than halve of the total sales in Polk. For a retailer looking to gain market share and establish a presence quickly, Polk would be the ideal county.
+
+![top_sales_median_per_store]({{site-url}}/images/top10_counties_total_sales_bar.png)
+
+#### a. Large-scale expansion
 
 For an average store expansion plan (annual target revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
 
@@ -83,14 +102,6 @@ For an average store expansion plan (annual target revenue of ~ \$200k), Winnesh
    - Recommended average price per bottle ~ $15.50
    - Recommended annual bottles sold ~ 21,000 bottles
    
-For a large scale expansion (annual revenue of ~ \$9mil per store), which requires access to a large market base, we recommended Polk County for the following reasons:
-
-   - Top county for total sales, i.e. largest market
-   - Top county for total bottle sold per store
-   - Top county for total number of transactions
-   - 54th percentile for average bottle price and average bottle profit
-   - Recommended average price per bottle ~ \$19
-   - Recommended annual bottle sold ~ 500,000 bottles
 
 2) Predictive modelling using linear regression
 
