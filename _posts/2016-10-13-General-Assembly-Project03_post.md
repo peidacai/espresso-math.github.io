@@ -52,7 +52,7 @@ After cleaning the data, county demographic data (dated 2010) were used to suppl
 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
-The histogram for sales per store in 2015 (shown above), demonstrated the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million, however, the majority of the stores only raked in \$200,000 in 2015.
+The (poorly charted) histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$\ 9 million, however, the majority of the stores only raked in \$200,000 in 2015.
 
 With this in mind, median (instead of mean) was used as average indicator to better represent the average sales performance per store across IOWA.
 
