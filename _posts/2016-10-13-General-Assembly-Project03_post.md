@@ -23,8 +23,8 @@ In this project, the task was to conduct market research through the lens of a d
 
 The data provided had the following characteristics:
 
-Columns: 18
-Rows: 2,709,551
+- Columns: 18
+- Rows: 2,709,551
 
 Each row corresponded to a single transaction in IOWA. Some of the more prominent features of each entry included: county, city, zip code, item description, price per bottle, cost per bottle, bottle sold and sales (or revenue).
 
@@ -33,14 +33,24 @@ Each row corresponded to a single transaction in IOWA. Some of the more prominen
 All columns were munged and cleaned. Cleaning process included:
 
 - Conversion to appropriate types (integer, float and string)
+
 - Filling empty cells, mostly using information from other similar cells within the same column. For example, over 10,000 cells had empty "County" cells. This was easily resolved by using the corresponding non-empty "City" cell as a key to find the "County" entry for another row with same "City" entry. This was possible since "City" is a subset category of "County" so cells with same "City" entry, would have same "County" entry.
+
 - Correcting cells with wrong value. Examples include zip code of '712-2', when it should have been a 5 digit format. This was corrected manually.
 
+- Finally, an wrong zip code was discovered when using Tableau for EDA. Turned out "52601" was wrongly entered as "56201", resulting in a store that was not in IOWA state.
 
+![wrong_zip]({{site-url}}/images/wrong_zip_des_moines.png)
 
 ### 4. Data mining
 
+#### Supplementing transactional data with externally sourced demographics data
+
 After cleaning the data, county demographic data (dated 2010) were used to supplement the existing dataset in search of a richer analysis. However, without detailed demographic data (such as age groups, gender, income range, etc), using simple land area per store and population per store yielded little value.
+
+#### Skewed sales data
+
+![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
 1) Location recommendation
 
