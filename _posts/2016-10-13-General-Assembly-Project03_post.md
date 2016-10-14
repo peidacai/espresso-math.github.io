@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: "GA Project03"
-description: "Predicting IOWA liquor sales with multivariate linear regression"
+description: "Business Intelligence with Data Science"
 comments: true
 category: articles
 mathjax: true
@@ -9,7 +9,7 @@ mathjax: true
 
 ![whiskey]({{site-url}}/images/whiskey.png)
 
-### Project03: Data Science for Business Intelligence: Predicting IOWA liquor sales
+### Project03: Predicting IOWA liquor sales
 
 ### 1. Introduction
 
@@ -52,9 +52,15 @@ After cleaning the data, county demographic data (dated 2010) were used to suppl
 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
+The histogram for sales per store in 2015 (shown above), demonstrated the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million, however, the majority of the stores only raked in \$200,000 in 2015.
+
+With this in mind, median (instead of mean) was used as average indicator to better represent the average sales performance per store across IOWA.
+
 1) Location recommendation
 
 We examined all 99 counties across the state of IOWA and selected 2 counties as possible locations depending on the client's requirement.
+
+![top_median_sales]({{site-url}}/images/top10_median_sales.png)
 
 For a typical store expansion plan (annual revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
    - Top county for average sale per store
