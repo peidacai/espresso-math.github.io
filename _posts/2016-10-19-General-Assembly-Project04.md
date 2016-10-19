@@ -102,10 +102,47 @@ New York state has the highest median salary (\$120,000) but Pennsylvania had th
 
 A logistic regression was used for predicting, together with a gridsearchCV module to find the best parameters for the model. Company ratings and number of reviews were normalized while the rest of the features were categorical. Sklearn's count vectorizer was also used to extract the top 20 most popular words used in Job titles and job summaries.
 
-#### a. Assumption
+Best estimator parameters:
+
+    - C = 0.33
+    - Penalty - L1 (LASSO regularization)
+    
+Most important features:
+
+Words like "Data", "Scientist", "Quantitative" rank high in the weightage of coefficients. However, the count vectorizer, even after account for English "stop words", still needed to be tuned for specific stop words. Case in point: the most important feature was the word "looking" in job summary.
+
+Interesting feature to note:
+
+#### "Number of reviews"
+
+Coefficient was zero, i.e. this had no impact on the predictions.
+
+#### "Company Ratings"
+
+Coefficient was -0.77, meaning this was negatively correlated with salary. Interesting as on first inspection, one would assume a positive relationship between company rating and salary. However, it can also be argued that highly rated companies are more popular and in demand, hence are natural price-setters when it comes to "buying the resource", therefore, are able to still get talents with lower salary.
+
+![ROC_for_salaries]({{site-url}}/images/roc_logreg.png)
+
+#### Assumption
 
    - "Data scientist" search in indeed.com returns data scientist jobs. While only strictly jobs with title "data scientist" could be kept, the role of data scientst is expanding and the definition of data scientist also getting fuzzed, therefore, it was assumed that the search algorithm of indeed.com took care of this and returned only data-scientist related jobs.
+   
+#### Tuning to minimise false positive rate
 
-### 6. Conclusion
+In order to reduce false positive rates, the threshold probability can be increased to determine if a salary falls into above Median. However, this was performed at the expense of higher false negative rates (predicting low salary when it is actually high). While one can argue that this helps with expectation management, clients would be "surprise" when actual pay was higher than promised, the low salary predicted may discourage high potential talents to apply for such jobs, resulting in a mismatch in required skillsets and talents.
 
+Therefore, tuning the threshold parameter should be done while being cognisant of such unintended consequences. An equation can be formed with expected loss of talents (in dollar value) with the increase in false negative rates to determine the best "compromise" between minimising false positive rates and managing the resulting increase in false negative rates.
 
+### 6. Conclusion and parting thoughts
+
+In this project, webscraping and logistic regression were covered in depth and used. The biggest challenge was actually the webscrapping portion as it required some knowledge of html syntax and the use of SELENIUM, python requests and BeautifulSoup. Then it was a matter of figuring out how each feature was labeled on the website and extract them to a dataframe.
+
+The modeling and model tuning portion were comparatively more manageable. Some future work could be to include results from other websites, scraping and merging them would be the main challenges. Another could be to model the data using different algorithm such as KNN, random forest, Naive Bayes, etc, then comparing the performances across, to select the best model.
+
+There were some important lessons learnt:
+
+    a. When scraping from search results, to optimise the search process, consider performing a mini-scrape to put the number of search results per city into a list (of tuples or dataframe). The number of results would then be known and the actual scrapping would consequently be more efficient. Some cities had less than 100 results while others like San Francisco had over 1,900 results.
+    
+    b. After scraping the results, drop duplicates needs to be performed.
+    
+    c. Always save scraped results to a csv file immediately after scraping. This would be the equivalent of an initial raw dataset.
