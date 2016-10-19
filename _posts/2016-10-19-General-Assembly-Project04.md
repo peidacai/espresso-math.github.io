@@ -8,6 +8,7 @@ mathjax: true
 ---
 
 ![data_science]({{site-url}}/images/data-science.png)
+
 *Image was source from [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*
 
 
