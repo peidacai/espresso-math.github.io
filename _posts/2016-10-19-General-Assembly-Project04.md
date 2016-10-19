@@ -24,7 +24,7 @@ In this project, the task was to web scrape career sites for salaries of data sc
 
 ### 2. Web Scraping
 
-Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-project research was conducted on the best cities for data scientists in the USA and a list of 246 cities was scraped from a separate [site](https://www.goodcall.com/data-center/best-places-data-scientists) as the list of cities to search for salaries. Search results was restricted to 300 per city and the following information was extracted:
+Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-project research was conducted on the best cities for data scientists in the USA and a list of 246 cities was scraped from a separate [site](https://www.goodcall.com/data-center/best-places-data-scientists) as the basis to search for salaries. Search results was restricted to 300 per city and the following information was extracted:
 
    - Job Title
    - Location
@@ -33,6 +33,8 @@ Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-projec
    - Company ratings
    - Number of reviews
    - Job Summary
+
+![screendump_from_indeed]({{site-url}}/images/indeed_screen_dump.png)
 
 ### 3. Data exploration
 
@@ -44,19 +46,17 @@ The data provided had the following characteristics:
 
 Each row corresponded to a single transaction in IOWA. Some of the more prominent features of each entry included: county, city, zip code, item description, price per bottle, cost per bottle, bottle sold and sales (or revenue).
 
-### 3. Data munging
+### 3. Data munging (Use of REGEX)
 
-All columns were munged and cleaned. Cleaning process included:
+This time round, data cleaning process was conducted in 2 areas.
 
-- Conversion to appropriate types (integer, float and string)
+#### a. Cleaning while scrapping
 
-- Filling empty cells, mostly using information from other similar cells within the same column. For example, over 10,000 cells had empty "County" cells. This was easily resolved by using the corresponding non-empty "City" cell as a key to find the "County" entry for another row with same "City" entry. This was possible since "City" is a subset category of "County" so cells with same "City" entry, would have same "County" entry.
+Since data was obtained using web scraping technique (python's: "requests" and "beautifulsoup" since indeed.com does not use AJAX, in which case SELENIUM would be used instead), much of the cleaning process was conducted while scrapping, before writing data into a pandas dataframe. As much as was possible, the ".text" function was used to extra only relevant portions of the html code. 
 
-- Correcting cells with wrong value. Examples include zip code of '712-2', when it should have been a 5 digit format. This was corrected manually.
+#### b. Cleaning within dataframe
 
-- Finally, an wrong zip code was discovered when using Tableau for EDA. Turned out "52601" was wrongly entered as "56201", resulting in a store that was not in IOWA state.
-
-![wrong_zip]({{site-url}}/images/wrong_zip_des_moines.png)
+Besides the usual cleaning process (converting to appropriate types, stripping spaces, checking for correct state entries, etc), the stand out this time was the use of python's Regular Expressions. It is a very powerful language which allowed for the extraction of strings which conformed to a specific format for example, to extract "54.4px", "re.findall( r'(\d+.\d)', x, re.I)" was used. And since web scraping really involves obtaining a bunch of text from websites, REGEX proved to be an invaluable tools to help with data cleaning and extraction of pertinent information.
 
 ### 4. Data mining
 
@@ -84,7 +84,7 @@ This poorly charted histogram for sales per store in 2015 (shown above), was inc
 [
 With this in mind, median (instead of mean) was used to calculate average to better represent the data.
 
-### 5. Locations, volume and price targets recommendation
+### 5. Creation of models
 
 We examined all 99 counties across the state of IOWA and selected 2 counties with 2 very different expansion strategies.
 
