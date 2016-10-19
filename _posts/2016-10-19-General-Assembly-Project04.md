@@ -1,25 +1,39 @@
 ---
 layout: post-no-feature
 title: "GA Project04"
-description: "Web scraping and predictive modelling of Data Scientists' salaries"
+description: "Web scrape and predict Data Scientists' salaries"
 comments: true
 category: articles
 mathjax: true
 ---
 
 ![data_science]({{site-url}}/images/data-science.png)
+*Image was source from [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*
 
-### Project03: Predicting IOWA liquor sales
+
+### Project04: Web Scrape & Predict
 
 ### 1. Introduction
 
-In this project, the task was to conduct market research as a data scientist, and recommend locations for a new liquor store in IOWA state. 2015 and 2016 Q1 statewide liquor store transactional data was provided for the research and there were 3 sub-tasks:
+In this project, the task was to web scrape career sites for salaries of data scientist job offerings and using data obtained to build a predictive model to predict data scientists' salaries:
 
-   - Identify suitable locations for a liquor store owner's expansion plans
-   - Create a model to predict future sales
-   - Recommend targets for bottles sold and average bottle price
+   - Web scrape from chosen websites
+   - Clean data
+   - Build classifier model to predict data scientists' salaries
 
-### 2. Data exploration
+### 2. Web Scraping
+
+Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-project research was conducted on the best cities for data scientists in the USA and a list of 246 cities was scraped from a separate [site](https://www.goodcall.com/data-center/best-places-data-scientists) as the list of cities to search for salaries. Search results was restricted to 300 per city and the following information was extracted:
+
+   - Job Title
+   - Location
+   - Salary
+   - Company name
+   - Company ratings
+   - Number of reviews
+   - Job Summary
+
+### 3. Data exploration
 
 The data provided had the following characteristics:
 
@@ -66,7 +80,7 @@ These 2 plots showed counties with the highest population per store and largest 
 ![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
 
 This poorly charted histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million.
-
+[
 With this in mind, median (instead of mean) was used to calculate average to better represent the data.
 
 ### 5. Locations, volume and price targets recommendation
