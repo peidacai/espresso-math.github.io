@@ -7,7 +7,7 @@ category: articles
 mathjax: true
 ---
 
-![data_science]({{site-url}}/images/data-science.png)
+<sup>![data_science]({{site-url}}/images/data-science.png)</sup>
 
 *Image was source from [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*
 
