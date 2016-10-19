@@ -38,11 +38,16 @@ Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-projec
 
 ### 3. Data exploration
 
-The data provided had the following characteristics:
+The data scapped had the following characteristics:
 
-- Total job : over 330 MB (csv)
-- Columns: 18
-- Rows: 2,709,551
+- Number of cities scrapped: 246
+- Maximum number of listings per city: 300
+- Total job listings scrapped : 60,294
+- Total job listings (less duplicates): 11,311
+- Total job listings with monthly/yearly salaries: 571
+- Remaining listings after accounting for outliers: 545
+- Minimum annual salary (w/ outlier, w/o outlier): $400, $40,000
+- Maximum annual salary: $250,000
 
 ### 3. Data munging (Use of REGEX)
 
@@ -69,29 +74,11 @@ def reg_rate(x):
 
 ### 4. Data mining
 
-#### Top 5 States with highest median salaries for Data Scientists
+#### Top 10 States with highest median salaries for Data Scientists
 
-After cleaning the data, county demographic data (dated 2010) were used to supplement the existing dataset in search of a richer analysis. However, without detailed demographic data (such as age groups, gender, income range, etc), using simple land area per store and population per store yielded little value.
+![state_salary]({{site-url}}/images/boxplot_salary.png)
 
-For example, a county with large land area and a low number of stores could be thought of as a good candidate, since it could mean that the area is underserved, liquor-wise. Similar arguments could be made for high population per store, since it would mean each store can serve a higher number of customers.
-
-Nevertheless, such simplistic analysis would be proven misguided with data below. As a wise man once said, 
-
-__"Let the data be the arbituer of truth."__
-
-![pop_vs_median_sales]({{site-url}}/images/blob_population_vs_median.png)
-
-These 2 plots showed counties with the highest population per store and largest county land area per store (denoted by size of circles). However, the best performing counties (darkest blue) were not the largest circles.
-
-![area_vs_median_sales]({{site-url}}/images/blob_area_vs_median.png)
-
-#### Skewed sales data
-
-![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
-
-This poorly charted histogram for sales per store in 2015 (shown above), was included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million.
-[
-With this in mind, median (instead of mean) was used to calculate average to better represent the data.
+New York state has the highest median salary but Pennsylvania had the highest maximum salary, $120,000.
 
 ### 5. Modelling
 
