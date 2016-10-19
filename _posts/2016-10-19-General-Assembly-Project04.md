@@ -1,13 +1,13 @@
 ---
 layout: post-no-feature
-title: "GA Project03"
-description: "Business Intelligence with Data Science"
+title: "GA Project04"
+description: "Web scraping and predictive modelling of Data Scientists' salaries"
 comments: true
 category: articles
 mathjax: true
 ---
 
-![whiskey]({{site-url}}/images/whiskey.png)
+![data_science]({{site-url}}/images/data-science.png)
 
 ### Project03: Predicting IOWA liquor sales
 
