@@ -7,9 +7,9 @@ category: articles
 mathjax: true
 ---
 
-<sup>![data_science]({{site-url}}/images/data-science.png)</sup>
+![data_science]({{site-url}}/images/data-science.png)
 
-*Image was source from [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*
+<sup>*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*</sup>
 
 
 ### Project04: Web Scrape & Predict
@@ -22,17 +22,35 @@ In this project, the task was to web scrape career sites for salaries of data sc
    - Clean data
    - Build classifier model to predict data scientists' salaries
 
-### 2. Web Scraping
+This blog post will be broken down into a non-technical and technical portion.
 
-Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-project research was conducted on the best cities for data scientists in the USA and a list of 246 cities was scraped from a separate [site](https://www.goodcall.com/data-center/best-places-data-scientists) as the basis to search for salaries. Search results was restricted to 300 per city and the following information was extracted:
+## Non-Technical
+
+The approach to this project was to predict if the salary of a single Data Scientist job listing in USA would be higher or lower than the median of $85,000 a year. The following factors were taken into consideration:
 
    - Job Title
    - Location
-   - Salary
    - Company name
    - Company ratings
    - Number of reviews
    - Job Summary
+
+The accuracy of the predictive model was about 78.4%, the top 4 most important factors in the model were:
+
+   1. Job Summary (the word "looking")
+   2. Job Title (the word "quantitative")
+   3. Job Title (the word "data")
+   4. New York State
+
+The 4th factor was included as it was the top "non-word" factor which determined the model.
+
+The model was further tuned to minimise occurences (close to zero chance) of predicting a high salary when actual salary is low. However, this was at the expense of higher error rates (about 1 in 2) at predicting low salary.
+
+## Technical
+
+### 2. Web Scraping
+
+Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-project research was conducted on the best cities for data scientists in the USA and a list of 246 cities was scraped from a separate [site](https://www.goodcall.com/data-center/best-places-data-scientists) as the basis to search for salaries. Search results was restricted to 300 per city and the following information was extracted:
 
 ![screendump_from_indeed]({{site-url}}/images/indeed_screen_dump.png)
 
@@ -40,13 +58,13 @@ Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-projec
 
 The data scapped had the following characteristics:
 
-- Number of cities scrapped: 246
+- Number of cities scraped: 246
 - Maximum number of listings per city: 300
 - Total job listings scrapped : 60,294
 - Total job listings (less duplicates): 11,311
 - Total job listings with monthly/yearly salaries: 571
 - Remaining listings after accounting for outliers: 545
-- Minimum annual salary (w/ outlier, w/o outlier): \$400, \$40,000
+- Minimum annual salary (w/ outlier, w/o outlier (self-defined)): \$400, \$40,000
 - Maximum annual salary: \$250,000
 
 ### 3. Data munging (Use of REGEX)
@@ -55,7 +73,7 @@ This time round, data cleaning process was conducted in 2 areas.
 
 #### a. Cleaning while scrapping
 
-Since data was obtained using web scraping technique (python's: "requests" and "beautifulsoup" since indeed.com does not use AJAX, in which case SELENIUM would be used instead), much of the cleaning process was conducted while scrapping, before writing data into a pandas dataframe. As much as was possible, the ".text" function was used to extra only relevant portions of the html code. 
+Since data was obtained using web scraping technique (python's: "requests" and "beautifulsoup" since indeed.com does not use AJAX, in which case SELENIUM would be used instead), much of the cleaning process was conducted while scrapping, before writing data into a pandas dataframe. As much as was possible, the ".text" function was used to extract only relevant portions of the html code. 
 
 #### b. Cleaning within dataframe
 
@@ -82,7 +100,7 @@ New York state has the highest median salary (\$120,000) but Pennsylvania had th
 
 ### 5. Modelling
 
-
+A logistic regression was used for predicting, together with a gridsearchCV module to find the best parameters for the model. Company ratings and number of reviews were normalized while the rest of the features were categorical. Sklearn's count vectorizer was also used to extract the top 20 most popular words used in Job titles and job summaries.
 
 #### a. Assumption
 
