@@ -40,11 +40,9 @@ Salaries data was scraped from [www.indeed.com](www.indeed.com). Some pre-projec
 
 The data provided had the following characteristics:
 
-- Filesize: over 330 MB (csv)
+- Total job : over 330 MB (csv)
 - Columns: 18
 - Rows: 2,709,551
-
-Each row corresponded to a single transaction in IOWA. Some of the more prominent features of each entry included: county, city, zip code, item description, price per bottle, cost per bottle, bottle sold and sales (or revenue).
 
 ### 3. Data munging (Use of REGEX)
 
@@ -56,11 +54,22 @@ Since data was obtained using web scraping technique (python's: "requests" and "
 
 #### b. Cleaning within dataframe
 
-Besides the usual cleaning process (converting to appropriate types, stripping spaces, checking for correct state entries, etc), the stand out this time was the use of python's Regular Expressions. It is a very powerful language which allowed for the extraction of strings which conformed to a specific format for example, to extract "54.4px", "re.findall( r'(\d+.\d)', x, re.I)" was used. And since web scraping really involves obtaining a bunch of text from websites, REGEX proved to be an invaluable tools to help with data cleaning and extraction of pertinent information.
+Besides the usual cleaning process (converting to appropriate types, stripping spaces, checking for correct state entries, etc), the stand out this time was the use of python's Regular Expressions. It is a very powerful language which allowed for the extraction of strings which conformed to a specific format for example, to extract "54.4px", "re.findall( r'(\d+\.\d)', x, re.I)" was used. And since web scraping really involves obtaining a bunch of text from websites, REGEX proved to be an invaluable tools to help with data cleaning and extraction of pertinent information.
+
+```py
+# Extract ratings from string
+
+def reg_rate(x):
+    matchObj = re.findall( r'(\d+\.\d)', x, re.I)
+    if matchObj:
+        return float(matchObj[0])
+    else:
+        return 0.
+```
 
 ### 4. Data mining
 
-#### Supplementing transactional data with externally sourced demographics data
+#### Top 5 States with highest median salaries for Data Scientists
 
 After cleaning the data, county demographic data (dated 2010) were used to supplement the existing dataset in search of a richer analysis. However, without detailed demographic data (such as age groups, gender, income range, etc), using simple land area per store and population per store yielded little value.
 
@@ -84,24 +93,13 @@ This poorly charted histogram for sales per store in 2015 (shown above), was inc
 [
 With this in mind, median (instead of mean) was used to calculate average to better represent the data.
 
-### 5. Creation of models
+### 5. Modelling
 
-We examined all 99 counties across the state of IOWA and selected 2 counties with 2 very different expansion strategies.
 
-#### a. Large-scale expansion
 
-For a large scale expansion (annual target revenue of up to \$9 million per store), which requires access to a large market base, we recommended Polk County for the following reasons:
+#### a. Assumption
 
-   - Top county for total sales, i.e. largest market
-   - Top county for total bottle sold per store
-   - Top county for total number of transactions
-   - 54th percentile for average bottle price and average bottle profit
-   - Recommended average price per bottle ~ \$19
-   - Recommended annual bottle sold ~ 500,000 bottles
-   
-![top_sales]({{site-url}}/images/top10_counties_total_sales_bar.png)
-
-The chart above showed that Polk county, in 2015, was the overwhelming leader in terms of sales volume. Linn county, the second highest, came in at less than halve of the total sales in Polk. For a retailer looking to gain market share and establish a presence quickly, Polk would be the ideal county.
+   - "Data scientist" search in indeed.com returns data scientist jobs. While only strictly jobs with title "data scientist" could be kept, the role of data scientst is expanding and the definition of data scientist also getting fuzzed, therefore, it was assumed that the search algorithm of indeed.com took care of this and returned only data-scientist related jobs.
 
 #### b. Average expansion
 
