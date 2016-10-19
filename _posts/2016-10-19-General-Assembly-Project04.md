@@ -46,8 +46,8 @@ The data scapped had the following characteristics:
 - Total job listings (less duplicates): 11,311
 - Total job listings with monthly/yearly salaries: 571
 - Remaining listings after accounting for outliers: 545
-- Minimum annual salary (w/ outlier, w/o outlier): $400, $40,000
-- Maximum annual salary: $250,000
+- Minimum annual salary (w/ outlier, w/o outlier): \$400, \$40,000
+- Maximum annual salary: \$250,000
 
 ### 3. Data munging (Use of REGEX)
 
@@ -78,7 +78,7 @@ def reg_rate(x):
 
 ![state_salary]({{site-url}}/images/boxplot_salary.png)
 
-New York state has the highest median salary ($120,000) but Pennsylvania had the highest maximum salary, $250,000.
+New York state has the highest median salary (\$120,000) but Pennsylvania had the highest maximum salary, \$250,000.
 
 ### 5. Modelling
 
