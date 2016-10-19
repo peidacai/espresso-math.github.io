@@ -78,7 +78,7 @@ def reg_rate(x):
 
 ![state_salary]({{site-url}}/images/boxplot_salary.png)
 
-New York state has the highest median salary but Pennsylvania had the highest maximum salary, $120,000.
+New York state has the highest median salary ($120,000) but Pennsylvania had the highest maximum salary, $250,000.
 
 ### 5. Modelling
 
@@ -88,59 +88,6 @@ New York state has the highest median salary but Pennsylvania had the highest ma
 
    - "Data scientist" search in indeed.com returns data scientist jobs. While only strictly jobs with title "data scientist" could be kept, the role of data scientst is expanding and the definition of data scientist also getting fuzzed, therefore, it was assumed that the search algorithm of indeed.com took care of this and returned only data-scientist related jobs.
 
-#### b. Average expansion
-
-![top_sales_median_per_store]({{site-url}}/images/blob_top_median.png)
-
-For an average store expansion plan (annual target revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
-
-   - Top county for average sale per store
-   - Top county for average bottle sold per store
-   - 97th percentile for average bottle price
-   - 97th percentile for average bottle profit
-   - 68th percentile for average number of transactions per store
-   - 46th percentile for mean bottles per transaction
-   - Recommended average price per bottle ~ $15.50
-   - Recommended annual bottles sold ~ 21,000 bottles
-
-The 68th and 46th percentile rankings for average number of transactions per store and mean bottles per transaction were considered to be desirable. These were indicators of workload per store and for a mediocre workload, stores in Winneshiek had higher sales amount per transaction, indicating customer preferences for more expensive products.
-
-2) Predictive modelling using linear regression
-
-Predictive models were created for both the approaches to locations. Models were created using historical per store data from the respective counties using the following features:
-
-   - Median Bottle Cost per store
-   - Median Bottle Price per store
-   - Median Bottle Profit per store
-   - Sum Bottles sold per store
-   - Sum Volume sold per store
-   - No. of transactions per store
-
-### Regression model performance for Polk
-
-![polk_reg_performance]({{site-url}}/images/reg_15Q1_pred_16Q1_polk.png)
-
-### Regression model performance for Winneshiek
-
-![winneshiek_reg_performance]({{site-url}}/images/reg_15Q1_pred_16Q1.png)
-
-2015 Q1 data was used as the training set and 2016 Q1 data was used as the test set. Ridge regularization and cross-validation were conducted as part of the fitting process. Alpha chosen by Ridge algorithm was 0.2 for regularization and was minimally effective in reducing RMSE. Model performance was considered mediocre with high r^2 (~ 0.95) but relatively high Root Mean Squared Error. Coefficients of the models were also significant.
-
-Regresion for Winneshiek was based on sparse data, due to there being only 5 stores in Winneshiek in 2015 and 2016.
-
-Suggestions to improve the models include:
-
-   - Scaling the features
-   - Use of richer dataset for advanced feature engineering, such as the aforementioned demographics data
-   - Using logistical regression to take into account locations of individual stores within the county
-   - Include more historical data for time-series analyses of market trends over the years
-
 ### 6. Conclusion
 
-This was a much more complex project, compared to earlier ones. The complexity was mainly due to the larger dataset, heavy data munging requirements and dataframe manipulations.
 
-Predictive modelling was limited in scope, primary due to the restriction to using linear regression.
-
-Finally, I would like to discuss a little about the main challenge I faced in completing this project. When first given the project, the problem was seemingly straight forward: predicting liquor sales of a county based on a bunch of historical data. However, as I worked through the steps of analysis, the modelling portion became more confusing. I found it challenging to wrap my mind around the fact that we were trying to predict sales of a location, when we were already given transactional data to "fit" into the model. Total sales could be derived by taking "quantity sold" x "average price sold".
-
-I think the main takeway for me was the thought process I went through when trying to overcome this confusion. The one thing which stood out to me was to have multiple sources of data. I would imagine, if asked to solve this problem for an actual company, I would spend the bulk of my time framing the problem and sourcing for data to supplement the analysis. Without transactional data, clever correlational data sources are required to make an "educated guess" of the sales figures (I was told university enrolment rates correlates strongly with liquor sales).
