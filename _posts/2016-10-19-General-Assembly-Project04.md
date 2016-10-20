@@ -10,7 +10,7 @@ quote: “Courage is almost a contradiction in terms. It means a strong desire t
 
 ![data_science]({{site-url}}/images/data-science.png)
 
-<font size="4">*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)</font>
+*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)
 
 ### Project04: Web Scrape & Predict
 
