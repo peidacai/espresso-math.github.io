@@ -5,6 +5,7 @@ description: "Web scrape and predict Data Scientists' salaries"
 comments: true
 category: articles
 mathjax: true
+quote: “Courage is almost a contradiction in terms. It means a strong desire to live taking the form of a readiness to die.” ― G.K. Chesterton
 ---
 
 ![data_science]({{site-url}}/images/data-science.png)
