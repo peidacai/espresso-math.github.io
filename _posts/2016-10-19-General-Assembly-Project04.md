@@ -9,7 +9,7 @@ mathjax: true
 
 ![data_science]({{site-url}}/images/data-science.png)
 
-<font size="8"><i>*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*</i></font>
+<font size="8"><i>*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)* ! important;</i></font>
 
 ### Project04: Web Scrape & Predict
 
@@ -63,7 +63,8 @@ The data scapped had the following characteristics:
 - Total job listings (less duplicates): 11,311
 - Total job listings with monthly/yearly salaries: 571
 - Remaining listings after accounting for outliers: 545
-- Minimum annual salary (w/ outlier, w/o outlier (self-defined)): \$400, \$40,000
+- Minimum annual salary (w/ outlier): \$400
+- Minimum annual salary (w/o outlier; self-imposed), \$40,000
 - Maximum annual salary: \$250,000
 
 ### 3. Data munging (Use of REGEX)
@@ -103,8 +104,8 @@ A logistic regression was used for predicting, together with a gridsearchCV modu
 
 Best estimator parameters:
 
-    - C = 0.33
-    - Penalty - L1 (LASSO regularization)
+   - C = 0.33
+   - Penalty - L1 (LASSO regularization)
     
 Most important features:
 
