@@ -131,7 +131,7 @@ Coefficient was -0.77, meaning this was negatively correlated with salary. Inter
    
 #### Tuning to minimise false positive rate
 
-In order to reduce false positive rates, the threshold probability can be increased to determine if a salary falls into above Median. However, this was performed at the expense of higher false negative rates (predicting low salary when it is actually high). While one can argue that this helps with expectation management, clients would be "surprise" when actual pay was higher than promised, the low salary predicted may discourage high potential talents to apply for such jobs, resulting in a mismatch in required skillsets and talents.
+In order to reduce false positive rates, the threshold probability can be increased. However, this is done at the expense of lower True positive rates - poorer recall. While one can argue that this helps with expectation management, clients would be "surprise" when actual pay was higher than promised, the low salary predicted may discourage high potential talents to apply for such jobs, resulting in a mismatch in required skillsets and talents.
 
 Therefore, tuning the threshold parameter should be done while being cognisant of such unintended consequences. An equation can be formed with expected loss of talents (in dollar value) with the increase in false negative rates to determine the best "compromise" between minimising false positive rates and managing the resulting increase in false negative rates.
 
