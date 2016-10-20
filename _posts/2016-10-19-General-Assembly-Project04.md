@@ -141,8 +141,8 @@ The modeling and model tuning portion were comparatively more manageable. Some f
 
 There were some important lessons learnt:
 
-    a. When scraping from search results, to optimise the search process, consider performing a mini-scrape to put the number of search results per city into a list (of tuples or dataframe). The number of results would then be known and the actual scrapping would consequently be more efficient. Some cities had less than 100 results while others like San Francisco had over 1,900 results.
+   a. When scraping from search results, to optimise the search process, consider performing a mini-scrape to put the number of search results per city into a list (of tuples or dataframe). The number of results would then be known and the actual scrapping would consequently be more efficient. Some cities had less than 100 results while others like San Francisco had over 1,900 results.
     
-    b. After scraping the results, drop duplicates needs to be performed.
+   b. After scraping the results, drop duplicates needs to be performed.
     
-    c. Always save scraped results to a csv file immediately after scraping. This would be the equivalent of an initial raw dataset.
+   c. Always save scraped results to a csv file immediately after scraping. This would be the equivalent of an initial raw dataset.
