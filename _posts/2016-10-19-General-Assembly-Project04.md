@@ -97,7 +97,8 @@ def reg_rate(x):
 
 ![state_salary]({{site-url}}/images/boxplot_salary.png)
 
-New York state has the highest median salary (\$120,000) but Pennsylvania had the highest maximum salary, \$250,000.
+   - New York state had the highest median salary \$120,000
+   - Pennsylvania had the highest maximum salary, \$250,000.
 
 ### 5. Modelling
 
