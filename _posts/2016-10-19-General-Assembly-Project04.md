@@ -9,8 +9,7 @@ mathjax: true
 
 ![data_science]({{site-url}}/images/data-science.png)
 
-<sup>*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*</sup>
-
+<font size="8"><i>*Image source: [http://www.lix.polytechnique.fr](http://www.lix.polytechnique.fr)*</i></font>
 
 ### Project04: Web Scrape & Predict
 
