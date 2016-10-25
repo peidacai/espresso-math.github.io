@@ -19,3 +19,7 @@ Two years into entreprenuership, when an opportunity came knocking for his famil
 Peter is currently enrolled in a Data Science Immersive bootcamp in General Assembly (NYC) while concurrently pursuing a Data Analyst Nanodegree from Udacity. He plans to further deepen his knowledge and skills in Data Science and Machine Learning before returning to Singapore to seek a career in the Data Science community in June 2017.
 
 Peter's family is huge part of his life, but in whatever snippets of free time he has left, he loves to run and road-cycle. He also indulges himself in the love/hate relationship with Arsenal football team and suffers from severe withdrawal symptoms over the summers (except for even years when Euros and World Cups can help fill some of the void).
+
+Contact Peida (Peter):
+[Email]('peterkai.15@gmail.com') [LinkedIn]('https://sg.linkedin.com/in/peida-peter-cai-113772b8')
+
