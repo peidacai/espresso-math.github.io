@@ -21,5 +21,6 @@ Peter is currently enrolled in a Data Science Immersive bootcamp in General Asse
 Peter's family is huge part of his life, but in whatever snippets of free time he has left, he loves to run and road-cycle. He also indulges himself in the love/hate relationship with Arsenal football team and suffers from severe withdrawal symptoms over the summers (except for even years when Euros and World Cups can help fill some of the void).
 
 Contact Peida (Peter):
-[Email]('peterkai.15@gmail.com') [LinkedIn]('https://sg.linkedin.com/in/peida-peter-cai-113772b8')
+
+[Email]('peterkai.15@gmail.com') / [LinkedIn]('https://sg.linkedin.com/in/peida-peter-cai-113772b8')
 
