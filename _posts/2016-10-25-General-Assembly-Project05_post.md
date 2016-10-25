@@ -1,33 +1,34 @@
 ---
 layout: post-no-feature
-title: "GA Project03"
-description: "Business Intelligence with Data Science"
+title: "GA Project05"
+description: "Data science for disaster relief"
 comments: true
 category: articles
-mathjax: true
+mathjax: false
 ---
 
-![whiskey]({{site-url}}/images/whiskey.png)
+![titanic]({{site-url}}/images/titanic-image.png)
 
-### Project03: Predicting IOWA liquor sales
+### Project05: Data science for disaster relief
 
 ### 1. Introduction
 
-In this project, the task was to conduct market research as a data scientist, and recommend locations for a new liquor store in IOWA state. 2015 and 2016 Q1 statewide liquor store transactional data was provided for the research and there were 3 sub-tasks:
-
-   - Identify suitable locations for a liquor store owner's expansion plans
-   - Create a model to predict future sales
-   - Recommend targets for bottles sold and average bottle price
+In this project, the task was to collect the titanic passenger data from an AWS PostgreSQL instance via Python + Jupyter Notebook, clean up the data before finally creating a bunch of classifying predictive models and compare the performances between the models.
 
 ### 2. Data exploration
 
-The data provided had the following characteristics:
+The data obtained from the AWS instance had the following characteristics:
 
-- Filesize: over 330 MB (csv)
-- Columns: 18
-- Rows: 2,709,551
+- Columns: 19
+- Rows: 891
 
-Each row corresponded to a single transaction in IOWA. Some of the more prominent features of each entry included: county, city, zip code, item description, price per bottle, cost per bottle, bottle sold and sales (or revenue).
+Each row corresponded to a single titanic passenger. Some of the more prominent features included: age, fare, passenger class and port embarked.
+
+#### a. Risks and assumptions of data
+
+- Since the complete passenger list consisted of over 2,400 passengers, we had to assume that this data we had was representative of the population and not biased in any way.
+
+- Secondly, without information on the source and the method of obtaining the data, we had to assume the veracity of the data, i.e. passenger A indeed travelled with X siblings/spouse, paid $Y fare, etc.
 
 ### 3. Data munging
 
