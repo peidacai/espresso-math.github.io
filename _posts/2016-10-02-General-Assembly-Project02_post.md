@@ -5,6 +5,7 @@ description: "Exploratory data analysis using Python on Year 2000 Billboard Top 
 comments: true
 category: articles
 mathjax: true
+quote: “I don't stop when I am tired, I stop when I am done."
 ---
 ![billboard]({{site-url}}/images/billboard.png)
 
