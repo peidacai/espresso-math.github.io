@@ -38,15 +38,35 @@ Each row corresponded to a single titanic passenger. Some of the more prominent 
 
 ![swarmplot]({{site-url}}/images/swarmplot_class_age.png)
 
-- Conversion to appropriate types (integer, float and string)
+Plots for the most prominent features (Sex and passenger class) were shown above. The plots showed that being a male and being a third class passenger had the lowest chances of survival.
 
-- Filling empty cells, mostly using information from other similar cells within the same column. For example, over 10,000 cells had empty "County" cells. This was easily resolved by using the corresponding non-empty "City" cell as a key to find the "County" entry for another row with same "City" entry. This was possible since "City" is a subset category of "County" so cells with same "City" entry, would have same "County" entry.
+### 4. Logistics Regression modelling
 
-- Correcting cells with wrong value. Examples include zip code of '712-2', when it should have been a 5 digit format. This was corrected manually.
+A total of 19 features were used as inputs into a logistics regression model to predict if a passenger survived. However, accounting for the arbituary intercept and dummy variables for categorical features, there were only effectively 7 features:
 
-- Finally, an wrong zip code was discovered when using Tableau for EDA. Turned out "52601" was wrongly entered as "56201", resulting in a store that was not in IOWA state.
+- Sex
+- Passenger Class
+- Age
+- Fare paid
+- Number of siblings and/or spouse
+- Number of parent and/or children
+- Port embarked
 
-### 4. Data mining
+![top_coeff]({{site-url}}/images/proj5_top5coeff.png)
+
+The top most influential coefficients were Sex (male); Passenger Class(third class); 3 siblings and/or spouse; and 4 siblings and/or spouse.
+
+![logreg_conmat]({{site-url}}/images/proj5_best_logreg_conmat.png)
+
+Confusion matrix for best logistics regression with cross-validation (5-fold)
+
+![knn_conmat]({{site-url}}/images/proj5_best_knn_conmat.png)
+
+Confusion matrix for best k nearest neighbors
+
+![roc_knn_logreg]({{site-url}}/images/roc__knn_logreg.png)
+
+Comparison of ROC curves and AUC for Logistics Regression and K Nearest Neighbors
 
 #### Supplementing transactional data with externally sourced demographics data
 
