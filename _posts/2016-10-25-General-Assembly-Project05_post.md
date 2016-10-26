@@ -5,7 +5,7 @@ description: "Data science for disaster relief"
 comments: true
 category: articles
 mathjax: false
-quote: “Great leaders don't set out to be leaders... They set out to make a difference. It's never about the role, always about the goal."
+quote: Great leaders don't set out to be leaders... They set out to make a difference. It's never about the role, always about the goal.
 ---
 
 ![titanic]({{site-url}}/images/titanic-image.png)
