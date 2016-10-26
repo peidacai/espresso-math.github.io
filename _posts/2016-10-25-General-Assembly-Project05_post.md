@@ -30,9 +30,13 @@ Each row corresponded to a single titanic passenger. Some of the more prominent 
 
 - Secondly, without information on the source and the method of obtaining the data, we had to assume the veracity of the data, i.e. passenger A indeed travelled with X siblings/spouse, paid $Y fare, etc.
 
-### 3. Data munging
+### 3. Exploratory Data Analysis
 
-All columns were munged and cleaned. Cleaning process included:
+![titanic_pairplot]({{site-url}}/images/titanic_pairplot.png)
+
+![violinplot]({{site-url}}/images/violinplot_sex_age.png)
+
+![swarmplot]({{site-url}}/images/swarmplot_class_age.png)
 
 - Conversion to appropriate types (integer, float and string)
 
@@ -41,8 +45,6 @@ All columns were munged and cleaned. Cleaning process included:
 - Correcting cells with wrong value. Examples include zip code of '712-2', when it should have been a 5 digit format. This was corrected manually.
 
 - Finally, an wrong zip code was discovered when using Tableau for EDA. Turned out "52601" was wrongly entered as "56201", resulting in a store that was not in IOWA state.
-
-![wrong_zip]({{site-url}}/images/wrong_zip_des_moines.png)
 
 ### 4. Data mining
 
