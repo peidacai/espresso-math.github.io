@@ -30,6 +30,8 @@ Each row corresponded to a single titanic passenger. Some of the more prominent 
 
 - Secondly, without information on the source and the method of obtaining the data, we had to assume the veracity of the data, i.e. passenger A indeed travelled with X siblings/spouse, paid $Y fare, etc.
 
+- Thirdly, titanic happened over a century ago. With advancement in technology in ship safety and higher level of education, insights and predictions from this dataset may not necessarily be relevant to disaster relief operations today.
+
 ### 3. Exploratory Data Analysis
 
 ![titanic_pairplot]({{site-url}}/images/titanic_pairplot.png)
@@ -40,7 +42,7 @@ Each row corresponded to a single titanic passenger. Some of the more prominent 
 
 Plots for the most prominent features (Sex and passenger class) were shown above. The plots showed that being a male and being a third class passenger had the lowest chances of survival.
 
-### 4. Logistics Regression modelling
+### 4. Logistics Regression and K-Nearest Neighbor modelling
 
 A total of 19 features were used as inputs into a logistics regression model to predict if a passenger survived. However, accounting for the arbituary intercept and dummy variables for categorical features, there were only effectively 7 features:
 
@@ -68,102 +70,42 @@ Confusion matrix for best k nearest neighbors
 
 Comparison of ROC curves and AUC for Logistics Regression and K Nearest Neighbors
 
-#### Supplementing transactional data with externally sourced demographics data
+From the ROC curves comparison, Logistics Regression (LogReg) had higher Area Under Curve performance compared with K Nearest Neighbors (KNN). Below a True Positive Rate (TPR) of about 0.85, LogReg model performs better than the KNN model. However, while in search of higher TPR (above 0.85), KNN starts to perform better, increasing TPR with increasing False Positive Rate (FPR) compared to LogReg whichs maintains the same TPR with increasing FPR.
 
-After cleaning the data, county demographic data (dated 2010) were used to supplement the existing dataset in search of a richer analysis. However, without detailed demographic data (such as age groups, gender, income range, etc), using simple land area per store and population per store yielded little value.
+### 5. Optimizing for Precision Recall as opposed to Accuracy
 
-For example, a county with large land area and a low number of stores could be thought of as a good candidate, since it could mean that the area is underserved, liquor-wise. Similar arguments could be made for high population per store, since it would mean each store can serve a higher number of customers.
+![precision_recall]({{site-url}}/images/proj5-precision-recall.png)
 
-Nevertheless, such simplistic analysis would be proven misguided with data below. As a wise man once said, 
+![pr_conmat]({{site-url}}/images/proj5_precision_recall_conmat.png)
 
-__"Let the data be the arbituer of truth."__
+While in a ROC curve, we strive to be in the top left quadrant, in a precision-recall curve, we are striving to be in the top right quadrant instead, i.e. perfect precision and recall of 1.0 each.
 
-![pop_vs_median_sales]({{site-url}}/images/blob_population_vs_median.png)
+However, in the plot above, it is evident that there is a compromise, gain one and lose the other (downward slope). In the context of a disaster relief, we are striving for highest possible recall (rescue all survivors). In the hypothetical situation with unlimited resources (time, manpower and equipment) for rescue operations, we can operate at recall = 1.0 and a low level of just above 0.4 for precision, to make sure all survivals are rescued, i.e. leave no stone unturned.
 
-These 2 plots showed counties with the highest population per store and largest county land area per store (denoted by size of circles). However, the best performing counties (darkest blue) were not the largest circles.
+In the real-world however, time is always the biggest enemy. Facing elements of winds and currents (perpetual expanding search area at the rate of radius squared compared to linear search efforts), combined with the very real threat of hypothermia, rescue efforts at sea have to be balanced with limited rescue units such as ships and other air assets like helicopters and drones.
 
-![area_vs_median_sales]({{site-url}}/images/blob_area_vs_median.png)
+With low precision and high recall, rescue efforts would have be increased many folds, just to sift through more false positives, which takes resources away from rescuing the true positives.
 
-#### Skewed sales data
+In this case, two possible recommendations are offered, depending on the amount of rescue resources there are at hand: 
 
-![skewed_sales]({{site-url}}/images/total_sales_hist_skewed.png)
+1) 0.8 recall and 0.8 precision;
 
-This poorly charted histogram for sales per store in 2015 (shown above), was deliberately included to demonstrate the extreme skewness of the sales per store data. There were extreme outliers with annual revenue of about \$9 million.
+2) 0.9 recall and 0.47 precision
 
-With this in mind, median (instead of mean) was used to calculate average to better represent the data.
+### 6. First look at DecisionTree and Bagging
 
-### 5. Locations, volume and price targets recommendation
+![roc_logreg_knn_tree]({{site-url}}/images/roc_logreg_knn_tree.png)
 
-We examined all 99 counties across the state of IOWA and selected 2 counties with 2 very different expansion strategies.
+A decision tree model was used to model the data with a gridsearchCV modifying "splitter", "max_depth" and "max_features" parameters of Decision Tree. In general, decision tree model did not perform as well as LogReg or KNN.
 
-#### a. Large-scale expansion
+![roc_compare_all]({{site-url}}/images/proj5_roc_compareall.png)
 
-For a large scale expansion (annual target revenue of up to \$9 million per store), which requires access to a large market base, we recommended Polk County for the following reasons:
-
-   - Top county for total sales, i.e. largest market
-   - Top county for total bottle sold per store
-   - Top county for total number of transactions
-   - 54th percentile for average bottle price and average bottle profit
-   - Recommended average price per bottle ~ \$19
-   - Recommended annual bottle sold ~ 500,000 bottles
-   
-![top_sales]({{site-url}}/images/top10_counties_total_sales_bar.png)
-
-The chart above showed that Polk county, in 2015, was the overwhelming leader in terms of sales volume. Linn county, the second highest, came in at less than halve of the total sales in Polk. For a retailer looking to gain market share and establish a presence quickly, Polk would be the ideal county.
-
-#### b. Average expansion
-
-![top_sales_median_per_store]({{site-url}}/images/blob_top_median.png)
-
-For an average store expansion plan (annual target revenue of ~ \$200k), Winneshiek was recommended for the following reasons:
-
-   - Top county for average sale per store
-   - Top county for average bottle sold per store
-   - 97th percentile for average bottle price
-   - 97th percentile for average bottle profit
-   - 68th percentile for average number of transactions per store
-   - 46th percentile for mean bottles per transaction
-   - Recommended average price per bottle ~ $15.50
-   - Recommended annual bottles sold ~ 21,000 bottles
-
-The 68th and 46th percentile rankings for average number of transactions per store and mean bottles per transaction were considered to be desirable. These were indicators of workload per store and for a mediocre workload, stores in Winneshiek had higher sales amount per transaction, indicating customer preferences for more expensive products.
-
-2) Predictive modelling using linear regression
-
-Predictive models were created for both the approaches to locations. Models were created using historical per store data from the respective counties using the following features:
-
-   - Median Bottle Cost per store
-   - Median Bottle Price per store
-   - Median Bottle Profit per store
-   - Sum Bottles sold per store
-   - Sum Volume sold per store
-   - No. of transactions per store
-
-### Regression model performance for Polk
-
-![polk_reg_performance]({{site-url}}/images/reg_15Q1_pred_16Q1_polk.png)
-
-### Regression model performance for Winneshiek
-
-![winneshiek_reg_performance]({{site-url}}/images/reg_15Q1_pred_16Q1.png)
-
-2015 Q1 data was used as the training set and 2016 Q1 data was used as the test set. Ridge regularization and cross-validation were conducted as part of the fitting process. Alpha chosen by Ridge algorithm was 0.2 for regularization and was minimally effective in reducing RMSE. Model performance was considered mediocre with high r^2 (~ 0.95) but relatively high Root Mean Squared Error. Coefficients of the models were also significant.
-
-Regresion for Winneshiek was based on sparse data, due to there being only 5 stores in Winneshiek in 2015 and 2016.
-
-Suggestions to improve the models include:
-
-   - Scaling the features
-   - Use of richer dataset for advanced feature engineering, such as the aforementioned demographics data
-   - Using logistical regression to take into account locations of individual stores within the county
-   - Include more historical data for time-series analyses of market trends over the years
+A bagging classifier model was introduced on top of the decision tree model to randomly resample the data (putting them into a bag) and predicting using the decision tree model created. This improved the performance of the decision model, putting it on par with LogReg and KNN.
 
 ### 6. Conclusion
 
-This was a much more complex project, compared to earlier ones. The complexity was mainly due to the larger dataset, heavy data munging requirements and dataframe manipulations.
+The main takeaway from this project was the understanding of ROC curve as well as precision-recall curve. The other area was the use of other modeling techniques such as DecisionTree and Bagging classifier to help further tune the model.
 
-Predictive modelling was limited in scope, primary due to the restriction to using linear regression.
+As mentioned in the risks and assumptions section above, in order to build a more up-to-date predictive model, more modern data sets are required.
 
-Finally, I would like to discuss a little about the main challenge I faced in completing this project. When first given the project, the problem was seemingly straight forward: predicting liquor sales of a county based on a bunch of historical data. However, as I worked through the steps of analysis, the modelling portion became more confusing. I found it challenging to wrap my mind around the fact that we were trying to predict sales of a location, when we were already given transactional data to "fit" into the model. Total sales could be derived by taking "quantity sold" x "average price sold".
-
-I think the main takeway for me was the thought process I went through when trying to overcome this confusion. The one thing which stood out to me was to have multiple sources of data. I would imagine, if asked to solve this problem for an actual company, I would spend the bulk of my time framing the problem and sourcing for data to supplement the analysis. Without transactional data, clever correlational data sources are required to make an "educated guess" of the sales figures (I was told university enrolment rates correlates strongly with liquor sales).
+Finally, this project also struck a chord with me personally. A search and rescue operation at sea was a very real possibility that I used to be trained for and prepared to conduct at short notice while serving in the navy. This is one of the reasons why I have a strong desire to join the data science community - to use data in service of the greater community and for a greater good.
