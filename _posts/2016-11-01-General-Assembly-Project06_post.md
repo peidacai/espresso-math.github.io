@@ -5,7 +5,7 @@ description: "IMDB Movie ratings"
 comments: true
 category: articles
 mathjax: false
-quote: The most powerful leadership tool you have is your own personal example. - John Wooden
+quote: "The most powerful leadership tool you have is your own personal example. - John Wooden"
 ---
 
 ![IMDB_logo]({{site-url}}/images/logo-IMDB.jpg)
