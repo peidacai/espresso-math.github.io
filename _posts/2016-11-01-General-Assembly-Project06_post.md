@@ -14,16 +14,14 @@ quote: The most powerful leadership tool you have is your own personal example. 
 
 ### 1. Introduction
 
-In this project, the task is to work with movie data, to figure out the factors which determined the IMDB movie ratings for the top movies of all time. The specific areas related to data science which 
+In this project, the task was to work with movie data, to figure out the factors which determined the IMDB movie ratings for top movies of all time. The specific areas related to data science which was used included ensemble modelling, use of APIs and natural language processing.
 
 ### 2. Data exploration
 
-The data obtained from the AWS instance had the following characteristics:
+Data from top 250 movies was obtained using the [IMDB API](https://www.omdbapi.com/), prominent features include: actors, title, awards, director and plot.
 
-- Columns: 19
-- Rows: 891
-
-Each row corresponded to a single titanic passenger. Some of the more prominent features included: age, fare, passenger class and port embarked.
+- Columns: 20
+- Rows: 250
 
 #### a. Risks and assumptions of data
 
