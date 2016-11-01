@@ -1,16 +1,16 @@
 ---
 layout: post-no-feature
-title: "GA Project05"
-description: "Data science for disaster relief"
+title: "GA Project06"
+description: "IMDB Movie ratings"
 comments: true
 category: articles
 mathjax: false
-quote: Great leaders don't set out to be leaders... They set out to make a difference. It's never about the role, always about the goal.
+quote: The most powerful leadership tool you have is your own personal example. - John Wooden
 ---
 
-![titanic]({{site-url}}/images/titanic-image.png)
+![IMDB_logo]({{site-url}}/images/logo-IMDB.jpg)
 
-### Project05: Data science for disaster relief
+### Project05: Predicting movie ratings for top 250 all-time favorites
 
 ### 1. Introduction
 
