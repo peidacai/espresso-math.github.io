@@ -12,34 +12,41 @@ quote: The most powerful leadership tool you have is your own personal example. 
 
 ### Project06: Predicting movie ratings for top 250 all-time favorites
 
-### 1. Introduction
+### 1. Introduction / Storyline
 
-In this project, the task was to work with movie data, to figure out the factors which determined the IMDB movie ratings for top movies of all time. The specific areas related to data science which was used included ensemble modelling, use of APIs and natural language processing.
+In this project, we pretend to be hired by Netflix to work with movie data, to try and figure out the factors which determined the IMDB movie ratings for top movies of all time. 
+
+Here, we explored ensemble modelling, use of APIs and natural language processing.
+
+#### Problem statement:
+
+- To determine the most influential factors which determine IMDB ratings of a mmovie
 
 ### 2. Data exploration
 
 Data from top 250 movies was obtained using the [IMDB API](https://www.omdbapi.com/), prominent features include: actors, title, awards, director and plot.
 
+Original data from API:
 - Columns: 20
 - Rows: 250
 
+Supplementary data (scraped from IMDB website):
+- USA box office gross revenue
+- Sound technology used in movie
+
 #### a. Risks and assumptions of data
 
-- Since the complete passenger list consisted of over 2,400 passengers, we had to assume that this data we had was representative of the population and not biased in any way.
-
-- Secondly, without information on the source and the method of obtaining the data, we had to assume the veracity of the data, i.e. passenger A indeed travelled with X siblings/spouse, paid $Y fare, etc.
-
-- Thirdly, titanic happened over a century ago. With advancement in technology in ship safety and higher level of education, insights and predictions from this dataset may not necessarily be relevant to disaster relief operations today.
+- 250 movies may not be large enough dataset to properly train a model to predict IMDB ratings. More movies should be obtained to create a better model.
 
 ### 3. Exploratory Data Analysis
 
-![titanic_pairplot]({{site-url}}/images/titanic_pairplot.png)
+![rated]({{site-url}}/images/proj6_movies_by_ratings.png)
 
-![violinplot]({{site-url}}/images/violinplot_sex_age.png)
+- Movie ratings distribution of Top 250 movies
 
-![swarmplot]({{site-url}}/images/swarmplot_class_age.png)
+![top_directors]({{site-url}}/images/proj6_top_directors.png)
 
-Plots for the most prominent features (Sex and passenger class) were shown above. The plots showed that being a male and being a third class passenger had the lowest chances of survival.
+- Director distribution of Top 250 movies
 
 ### 4. Logistics Regression and K-Nearest Neighbor modelling
 
@@ -93,7 +100,7 @@ In this case, two possible recommendations are offered, depending on the amount 
 
 ### 6. First look at DecisionTree and Bagging
 
-![roc_logreg_knn_tree]({{site-url}}/images/roc_logreg_knn_tree.png)
+![model_performance]({{site-url}}/images/proj6_model_performance.png)
 
 A decision tree model was used to model the data with a gridsearchCV modifying "splitter", "max_depth" and "max_features" parameters of Decision Tree. In general, decision tree model did not perform as well as LogReg or KNN.
 
