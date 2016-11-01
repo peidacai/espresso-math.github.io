@@ -10,11 +10,11 @@ quote: The most powerful leadership tool you have is your own personal example. 
 
 ![IMDB_logo]({{site-url}}/images/logo-IMDB.jpg)
 
-### Project05: Predicting movie ratings for top 250 all-time favorites
+### Project06: Predicting movie ratings for top 250 all-time favorites
 
 ### 1. Introduction
 
-In this project, the task was to collect the titanic passenger data from an AWS PostgreSQL instance via Python + Jupyter Notebook, clean up the data before finally creating a bunch of classifying predictive models and compare the performances between the models.
+In this project, the task is to work with movie data, to figure out the factors which determined the IMDB movie ratings for the top movies of all time. The specific areas related to data science which 
 
 ### 2. Data exploration
 
