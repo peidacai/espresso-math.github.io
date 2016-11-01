@@ -4,7 +4,7 @@ title: "GA Project06"
 description: "IMDB Movie ratings"
 comments: true
 category: articles
-mathjax: false
+mathjax: True
 quote: "The most powerful leadership tool you have is your own personal example. - John Wooden"
 ---
 
@@ -14,7 +14,7 @@ quote: "The most powerful leadership tool you have is your own personal example.
 
 ### 1. Introduction / Storyline
 
-In this project, we pretend to be hired by Netflix to work with movie data, to try and figure out the factors which determined the IMDB movie ratings for top movies of all time. 
+In this project, we pretended to be hired by Netflix to work with movie data, to try and figure out the factors which determined the IMDB movie ratings for top movies of all time. 
 
 Here, we explored ensemble modelling, use of APIs and natural language processing.
 
