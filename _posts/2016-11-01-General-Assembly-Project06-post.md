@@ -1,4 +1,5 @@
 ---
+layout: post-no-feature
 title: "GA Project06"
 description: "IMDB Movie ratings"
 comments: true
