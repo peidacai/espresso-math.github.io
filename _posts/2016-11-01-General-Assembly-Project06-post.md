@@ -27,10 +27,12 @@ Here, we explored ensemble modelling, use of APIs and natural language processin
 Data from top 250 movies was obtained using the [IMDB API](https://www.omdbapi.com/), prominent features include: actors, title, awards, director and plot.
 
 Original data from API:
+
 - Columns: 20
 - Rows: 250
 
 Supplementary data (scraped from IMDB website):
+
 - USA box office gross revenue
 - Sound technology used in movie
 
