@@ -1,10 +1,9 @@
 ---
-layout: post-no-feature
 title: "GA Project06"
 description: "IMDB Movie ratings"
 comments: true
 category: articles
-mathjax: False
+mathjax: false
 quote: “The most powerful leadership tool you have is your own personal example." - John Wooden
 ---
 
