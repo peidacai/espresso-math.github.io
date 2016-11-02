@@ -8,22 +8,19 @@ mathjax: false
 quote: “The most powerful leadership tool you have is your own personal example." - John Wooden
 ---
 
-
-
 ![IMDB_logo]({{site-url}}/images/logo-IMDB.jpg)
-
 
 ### Project06: Predicting movie ratings for top 250 all-time favorites
 
 ### 1. Introduction / Storyline
 
-In this project, we pretended to be hired by Netflix to work with movie data, to try and figure out the factors which determined the IMDB movie ratings for top movies of all time. 
+In this project, we pretended to be data scientists working for Netflix to try and figure out the factors which determined the IMDB movie ratings for top movies of all time. 
 
 Here, we explored ensemble modelling, use of APIs and natural language processing.
 
 #### Problem statement:
 
-- To determine the most influential factors which determine IMDB ratings of a mmovie
+- To determine the most influential factors which determine IMDB ratings of an all-time favourite movie
 
 ### 2. Data exploration
 
