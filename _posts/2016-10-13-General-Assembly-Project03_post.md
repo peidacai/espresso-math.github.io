@@ -5,7 +5,7 @@ description: "Business Intelligence with Data Science"
 comments: true
 category: articles
 mathjax: true
-quote: “There are only 3 choices in life: Give up, give in or give it all you've got."
+quote: “There are only 3 choices in life - Give up, give in or give it all you've got."
 ---
 
 ![whiskey]({{site-url}}/images/whiskey.png)
