@@ -9,7 +9,9 @@ quote: “The most powerful leadership tool you have is your own personal exampl
 ---
 
 
+
 ![IMDB_logo]({{site-url}}/images/logo-IMDB.jpg)
+
 
 ### Project06: Predicting movie ratings for top 250 all-time favorites
 
