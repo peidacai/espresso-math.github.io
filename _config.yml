@@ -1,6 +1,6 @@
-title:            Peida's Blog
-tagline:          Data Science Adventures
-description: "Ex naval-officer / entrepreneur / stay-home-dad on his next adventure to becoming a data scientist"
+title:            Espresso Math
+tagline:          A Cup of Figures
+description: "Reader, you have been warned! This definitly is not a blog. This is where I keep an extended version of my notes and writing. Do not attempt to find any meaning or purpose in my writing. You will fail miserably."
 # An awesome quote for your website
 quote:  "Cringe. Now bad poetry."
 canonical: espresso-math.github.io
@@ -12,16 +12,16 @@ canonical: espresso-math.github.io
 
 # Owner/author information
 owner:
-  name:           Peida Cai
-  avatar:         
+  name:           Adrian Glitch
+  avatar:         avatar.jpg
   bio:            
-  email:          peterkai.15@gmail.com
+  email:          adrianglitch.auth@gmail.com
   twitter:        
-  github:         peidacai
+  github:         espresso-math
   instagram:      
   dribbble:
-  googleplus:            
-  disqus:         
+  googleplus:     https://plus.google.com/u/3/105796012708469039091       
+  disqus:         espresso-math
   location:       
   # Plug in your disqus shortname!
 
