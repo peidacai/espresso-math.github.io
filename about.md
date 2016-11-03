@@ -22,5 +22,5 @@ Peter's family is huge part of his life, but in whatever snippets of free time h
 
 Contact Peida (Peter):
 
-[Email](mailto:peterkai.15@gmail.com) / [LinkedIn](https://sg.linkedin.com/in/peida-peter-cai-113772b8)
+[Email](mailto:peterkai.15@gmail.com) / [LinkedIn](https://sg.linkedin.com/in/peida-peter-cai)
 
