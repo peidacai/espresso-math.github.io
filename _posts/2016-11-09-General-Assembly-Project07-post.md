@@ -77,15 +77,31 @@ Silhouette scores:
 
 When we examine the scatter plot visually, it became clear DBSCAN performed poorly in creating clusters. The scatter plots were rather close together and there were no distinct groups. KMeans, having seen there were possibly 3 or more clusters (3 distinct groups of traffic volume) earlier, we were able to try K (number of clusters) within that region to achieve the ideal number of clusters with the highest silhouette score.
 
+There was an interesting discussion on having to drop highly correlated features before conducting PCA as having too many similar would increase the weightage of certain principal components, perhaps unfairly. Therefore, a PCA/KMeans clustering was conducted to examine if removing highly correlated features would give us better clustering (although my initial feel was that it wouldn't, if anything, it would result in less segregation).
+
 ![clustered_airports]({{site-url}}/images/proj07_clustered_airport_dropped corr.png)
 
-
+4 clusters had the highest silhouette score 0.406 (slightly better, poorer performance of 0.384 with 5 clusters). The cluster plots above showed that 4 clusters may not be a good fit, particularly the yellow cluster.
 
 ![3D_clusters]({{site-url}}/images/proj07_3D_pca_kmeans.png)
 
-### 6. Underlying trends within clusters
+A third component was added to the PCA (explained variance ratio of almost 0.82) and a 3D plot was created. As with all 3D plots, without the ability to rotate the plot in real-time, the plot couldn't covey much else over a 2D plot.
 
+### 6. Underlying trends within clusters (done with Tableau)
 
+![Clustered_arrival_delay]({{site-url}}/images/proj07_clustered_arrival_delays.png)
+
+![Depart_metric]({{site-url}}/images/proj07_depart_metric.png)
+
+We see that cluster 1 consisted of airports with the highest arrival delays, while cluster 2 consisted of airports with the highest cancellations and diversions. The fact that they belonged in 2 different clusters indicated that cancellations and diversions might not have been the reasons behind the delays.
+
+![Size_delay]({{site-url}}/images/proj07_size_delay.png)
+
+The above plot showed the relationship between traffic volume handled (size of cicrle) and average block delay. Again, there was no indication of high traffic volume correlating with higher delay.
+
+![Clustered_geo]({{site-url}}/images/proj07_clustered_airports.png)
+
+When we plotted the clusters in their respective geographical locations, we saw some light in explaining the delays. Cluster 1 (Orange) fell mostly along the northeastern coast of Northern American continent
 
 ### 7. Conclusion and future work
 
