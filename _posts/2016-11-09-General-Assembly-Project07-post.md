@@ -101,7 +101,18 @@ The above plot showed the relationship between traffic volume handled (size of c
 
 ![Clustered_geo]({{site-url}}/images/proj07_clustered_airports.png)
 
-When we plotted the clusters in their respective geographical locations, we saw some light in explaining the delays. Cluster 1 (Orange) fell mostly along the northeastern coast of Northern American continent
+When we plotted the clusters in their respective geographical locations, we saw some light in explaining the delays. Cluster 1 (Orange) fell mostly along the eastern coast of Northern American continent (all the west south to Florida), perhaps this had something to do with weather as this is also the [Atlantic hurricane belt](http://www.nhc.noaa.gov/climo/).
+
+Cluster 2 (red), on the other hand, may not have correlation with geographical locations. This could be further looked into to examine the reason for their high numbers of cancellations and diversions.
 
 ### 7. Conclusion and future work
 
+Some areas of future work could be:
+
+- Combine with weather data, especially hurricane data to investigate correlation with delays, perhaps looking into delays in hurricane months.
+
+- Examine more operational data from Cluster 2 (red) to investigate high level of cancellations and diversions.
+
+- Overlay flight paths on to the geographical clusters.
+
+Due to the nature of the data (yearly average), this project was only able to provide a high level clustering of the delays, without being able to dive deeper into the detailed reasons behind the delays. One other area to look into is optimizing efficiency in airport management and operations and some of the data we could look into could include individual flight details, employee and passenger surveys and employee operational data (hours worked, etc).
