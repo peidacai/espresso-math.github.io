@@ -45,10 +45,11 @@ All airports were originally clustered into 9 different FAA regions by geographi
 
 ![featuresl({{site-url}}/images/proj07_hist_depart_arr.png)
 
+There seems to be 3 types of airports based on the volume of departures and arrivals - below 100,000 departures/arrivals; 100,000 to 300,000 and above 300,000. This could provide insights into number of clusters later, when conducting unsupervise machine learning.
 
+![scatterplot_size_delaysl({{site-url}}/images/proj07_scatterplot_delay_traffic.png)
 
-
-
+From this scatterplot, it seems that there is no strong correlation between volume of traffic handled and delays. The airports with the worst delays handled less than 200,000 arrivals / departures. And there are no clear relationships between FAA regions and delays.
 
 ### 4. Dimensionality reduction
 
