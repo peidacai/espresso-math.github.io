@@ -65,13 +65,23 @@ The top 2 principal components accounted for explained variance ratio of nearly 
 
 Adding a third component increased explained variance ratio to almost 82%.
 
-![clustered_airports]({{site-url}}/images/proj07_clustered_airport_dropped corr.png)
-
-![3D_clusters]({{site-url}}/images/proj07_3D_pca_kmeans.png)
-
-![clustered_airport_lat_lon]({{site-url}}/images/proj07_clustered_airport_lat_lon_all.png)
 ### 5. Unsupervised machine learning (KMeans clustering and DBSCAN)
 
+KMeans clustering and DBSCAN were used to cluster the scatter plots on the principal component planes. In this situation, KMeans performed better.
+
+Silhouette scores:
+- KMeans (5 clusters) = 0.401
+- DBSCAN = -0.352 (40 clusters created)
+
+![clustered_airport_lat_lon]({{site-url}}/images/proj07_clustered_airport_lat_lon_all.png)
+
+When we examine the scatter plot visually, it became clear DBSCAN performed poorly in creating clusters. The scatter plots were rather close together and there were no distinct groups. KMeans, having seen there were possibly 3 or more clusters (3 distinct groups of traffic volume) earlier, we were able to try K (number of clusters) within that region to achieve the ideal number of clusters with the highest silhouette score.
+
+![clustered_airports]({{site-url}}/images/proj07_clustered_airport_dropped corr.png)
+
+
+
+![3D_clusters]({{site-url}}/images/proj07_3D_pca_kmeans.png)
 
 ### 6. Underlying trends within clusters
 
