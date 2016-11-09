@@ -5,7 +5,7 @@ description: "Clustering Airports delay"
 comments: true
 category: articles
 mathjax: false
-quote: "Torture the data, and it will confess to anything."  Ronald Coase, Economics, Nobel Prize Laureate
+quote: "Torture the data, and it will confess to anything. - Ronald Coase, Economics, Nobel Prize Laureate"
 ---
 
 ![delay_comic]({{site-url}}/images/proj07_comic.jpg)
