@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: "GA Project07"
-description: "Clustering Airports delay"
+description: "Clustering airports delay"
 comments: true
 category: articles
 mathjax: false
@@ -45,20 +45,31 @@ All airports were originally clustered into 9 different FAA regions by geographi
 
 ![depart_arr_hist]({{site-url}}/images/proj07_hist_depart_arr.png)
 
-There seems to be 3 types of airports based on the volume of departures and arrivals - below 100,000 departures/arrivals; 100,000 to 300,000 and above 300,000. This could provide insights into number of clusters later, when conducting unsupervise machine learning.
+There seems to be 3 types of airports based on the volume of departures and arrivals:
+
+- Below 100,000 departures/arrivals; 
+- 100,000 to 300,000;
+- Above 300,000
+
+This could provide insights into number of clusters later, when conducting unsupervise machine learning.
 
 ![scatterplot_size_delays]({{site-url}}/images/proj07_scatterplot_delay_traffic.png)
 
-From this scatterplot, it seems that there is no strong correlation between volume of traffic handled and delays. The airports with the worst delays handled less than 200,000 arrivals / departures. And there are no clear relationships between FAA regions and delays.
+From this scatterplot, it seemed that there was no strong correlation between volume of traffic handled and delays. The airports with the worst delays handled less than 200,000 arrivals / departures. And there were no clear relationships between FAA regions and delays.
 
-### 4. Dimensionality reduction (2 principal components)
+### 4. Dimensionality reduction (2 and 3 principal components)
 
 Principal component analysis was conducted and used as a dimensionality reduction tool. The aim was to reduce the dimensions to 2 so that unsupervised machine learning clustering can be conducted to figure out the underlying airport clusters.
 
-#### a. 3 principal components (3D plots)
+The top 2 principal components accounted for explained variance ratio of nearly 75%. This meant that the reduction from 28 features to 2 features lost only about 25% of the explainability of all features.
 
+Adding a third component increased explained variance ratio to almost 82%.
 
+![clustered_airports]({{site-url}}/images/proj07_clustered_airport_dropped corr.png)
 
+![3D_clusters]({{site-url}}/images/proj07_3D_pca_kmeans.png)
+
+![clustered_airport_lat_lon]({{site-url}}/images/proj07_clustered_airport_lat_lon_all.png)
 ### 5. Unsupervised machine learning (KMeans clustering and DBSCAN)
 
 
