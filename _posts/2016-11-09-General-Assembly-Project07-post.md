@@ -51,7 +51,12 @@ There seems to be 3 types of airports based on the volume of departures and arri
 
 From this scatterplot, it seems that there is no strong correlation between volume of traffic handled and delays. The airports with the worst delays handled less than 200,000 arrivals / departures. And there are no clear relationships between FAA regions and delays.
 
-### 4. Dimensionality reduction
+### 4. Dimensionality reduction (2 principal components)
+
+Principal component analysis was conducted and used as a dimensionality reduction tool. The aim was to reduce the dimensions to 2 so that unsupervised machine learning clustering can be conducted to figure out the underlying airport clusters.
+
+#### a. 3 principal components (3D plots)
+
 
 
 ### 5. Unsupervised machine learning (KMeans clustering and DBSCAN)
