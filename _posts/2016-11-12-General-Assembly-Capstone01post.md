@@ -1,14 +1,14 @@
 ---
 layout: post-no-feature
-title: "GA Project07"
-description: "Clustering airports delay"
+title: "GA Capstone 01"
+description: "Project description and web scraping"
 comments: true
 category: articles
 mathjax: false
-quote: "Torture the data, and it will confess to anything. - Ronald Coase, Economics, Nobel Prize Laureate"
+quote: "There are only three certainties in your life as a data scientist: death, taxes, and an inevitable git clusterfuck. You will find yourself typing git reset --hard and hitting enter while sighing at least once. That's OK. - Trey Causey"
 ---
 
-![delay_comic]({{site-url}}/images/proj07_comic.jpg)
+![property_comic]({{site-url}}/images/property-commercial_real_estate-realtors-construction-chain_stores-scouting-aton2533_low.jpg)
 
 ### Project07: Clustering United States airports delay
 
