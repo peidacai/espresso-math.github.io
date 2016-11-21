@@ -24,7 +24,15 @@ From my experience in the retail food and beverage industry, I found the inspira
 
 Therefore, I started looking around at data science projects which dealt with geospatial data in NYC and stumbled upon this [brilliant blog](http://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/) by Todd W. Schneider. In his blog, Todd worked with over 1.1 billion rows of taxi and uber trip data with some breathe-taking visualizations! I was so inspired to attempt something like this before I realized that the size of the data he worked with was over 3.3 gigabytes! There was no way my aging MacBook Air with a measly 4GB RAM will be able to take such a beating. I had to think of a way to work around this. More on this in subsequent post!
 
-### Retail rental data
+### Web scrapping retail rental data
 
-Now that I had a clear direction, I had to start gathering the data. As mentioned, I faced a significant road block when trying to get taxi data, so I decided to put that aside for now and focus on gathering the rental data. I did a quick search for online resources of commercial rental properties in NYC and found one that was very promising.
+Now that I had a clear direction, I had to start gathering the data. As mentioned, I faced a significant road block when trying to get taxi data, so I decided to put that aside for now and focus on gathering the rental data. I did a quick search for online resources of commercial rental properties in NYC and found one that was very promising from [loopnet](http://www.loopnet.com/), and the bonus was that they do not use AJAX (Asynchronous JavaScript and XML). While useful for users, websites which use AJAX make life for web scrappers much harder and more time-consuming.
+
+However, my joy was short lived. While scrapping loopnet for commercial data, I managed to get over 1,000 listings in NYC. I was overjoyed! But once I practised one of my lessons learnt from the earlier projects, to drop duplicates, I was left with less than 50 listings! When I tried to expand my search in loopnet, they banned my IP address.
+
+### Experiencing Selenium and PhantomJS
+
+I had to turn my attention elsewhere, and found another promising website [cityfeet.com](http://www.cityfeet.com/cont/ny/new-york-retail-space#). As you probably can tell, this site uses AJAX and I had to dig in with Selenium and PhantomJS (with some additional lines of code to "wait" for rest of the page to load" before continuing to scroll).
+
+
 
