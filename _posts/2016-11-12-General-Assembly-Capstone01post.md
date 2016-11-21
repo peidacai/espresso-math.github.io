@@ -67,7 +67,7 @@ And this was when I remembered that like Singapore, NYC probably control the lis
 
 ### Working with what I have
 
-Hence, my approach to this project is to plough ahead with the current list of properties which I found, to create a project based on proof-of-concept more than an actual working one since I can already see that the performance of the model will be poor with the low quality data going into the model.
+Hence, my approach to this project was to plough ahead with the current list of properties which I found, to create a project based on proof-of-concept more than an actual working one since I can already see that the performance of the model will be poor with the low quality data going into the model.
 
 Nevertheless, conceptually, the project is still feasible and workable, just that it would perform to its full potential only with a high quality rental data input.
 
