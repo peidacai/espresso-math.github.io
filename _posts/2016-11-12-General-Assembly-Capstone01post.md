@@ -10,109 +10,21 @@ quote: "There are only three certainties in your life as a data scientist: death
 
 ![property_comic]({{site-url}}/images/property-commercial_real_estate-realtors-construction-chain_stores-scouting-aton2533_low.jpg)
 
-### Project07: Clustering United States airports delay
+### Capstone Project: Introduction / Webscrapping
 
-### 1. Introduction / Project Aim
+This week, in place of the weekly project, we began our journey into our capstone projects.
 
-This week, we investigated airport delays in the United States, with airport yearly averaged data from 2004 to 2014. The task was to identify clusters of airports which have similar operational characteristics and delay performances.
+My chosen project is "Predicting NYC retail rental prices with taxi data".
 
-#### a. Data science areas of interest
+### Aim / Impetus
 
-- Dimensionality reduction
-- Principal component analysis
-- Clustering
+I knew I wanted to do a project with geospatial data, however, after discussions with the bootcamp instructors, most geospatial analyses by themselves involves descriptive projects as opposed to predictive modelling. Therefore, in order to fulfil the bootcamp requirement, I had to find a way to marry the geospatial data with a predictive model.
 
-### 2. Risk and assumptions
+From my experience in the retail food and beverage industry, I found the inspiration for my capstone projects. In my previous life, I had the opportunity to launch 3 food retail stores in Singapore. And like all other retail business, location of stores ranked high in the priority. However, many times, I found information lacking on the potential locations. Specifically, information on potential customer reach of the locations such as estimate of customer footcount, customer demographics, etc.
 
-- Delays are given in averages, no information was provided on the variances and the metric for average is not known.
-- It was assumed that the data was obtained via a rigorous process and veracity of data can be assumed.
+Therefore, I started looking around at data science projects which dealt with geospatial data in NYC and stumbled upon this [brilliant blog](http://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/) by Todd W. Schneider. In his blog, Todd worked with over 1.1 billion rows of taxi and uber trip data with some breathe-taking visualizations! I was so inspired to attempt something like this before I realized that the size of the data he worked with was over 3.3 gigabytes! There was no way my aging MacBook Air with a measly 4GB RAM will be able to take such a beating. I had to think of a way to work around this. More on this in subsequent post!
 
-### 3. Exploratory Data Analysis
+### Retail rental data
 
-For each airport, the data contained averaged yearly data on operational performance and delay times.
+Now that I had a clear direction, I had to start gathering the data. As mentioned, I faced a significant road block when trying to get taxi data, so I decided to put that aside for now and focus on gathering the rental data. I did a quick search for online resources of commercial rental properties in NYC and found one that was very promising.
 
-![features]({{site-url}}/images/proj07_features.png)
-
-The features are broadly divided into 3 types:
-
-- Geographical information (FAA Regions, state, county, etc)
-- Size of airport (departures and arrivals count)
-- Operational performance metrics (various delay metrics)
-
-![FAA_regions_original]({{site-url}}/images/proj07_original_FAA_REGIONS.png)
-
-All airports were originally clustered into 9 different FAA regions by geographical locations and primarily for administrative purposes.
-
-![depart_arr_hist]({{site-url}}/images/proj07_hist_depart_arr.png)
-
-There seems to be 3 types of airports based on the volume of departures and arrivals:
-
-- Below 100,000 departures/arrivals; 
-- 100,000 to 300,000;
-- Above 300,000
-
-This could provide insights into number of clusters later, when conducting unsupervise machine learning.
-
-![scatterplot_size_delays]({{site-url}}/images/proj07_scatterplot_delay_traffic.png)
-
-From this scatterplot, it seemed that there was no strong correlation between volume of traffic handled and delays. The airports with the worst delays handled less than 200,000 arrivals / departures. And there were no clear relationships between FAA regions and delays.
-
-### 4. Dimensionality reduction (2 and 3 principal components)
-
-Principal component analysis was conducted and used as a dimensionality reduction tool. The aim was to reduce the dimensions to 2 so that unsupervised machine learning clustering can be conducted to figure out the underlying airport clusters.
-
-The top 2 principal components accounted for explained variance ratio of nearly 75%. This meant that the reduction from 28 features to 2 features lost only about 25% of the explainability of all features.
-
-Adding a third component increased explained variance ratio to almost 82%.
-
-### 5. Unsupervised machine learning (KMeans clustering and DBSCAN)
-
-KMeans clustering and DBSCAN were used to cluster the scatter plots on the principal component planes. In this situation, KMeans performed better.
-
-Silhouette scores:
-- KMeans (5 clusters) = 0.401
-- DBSCAN = -0.352 (40 clusters created)
-
-![clustered_airport_lat_lon]({{site-url}}/images/proj07_clustered_airport_lat_lon_all.png)
-
-When we examine the scatter plot visually, it became clear DBSCAN performed poorly in creating clusters. The scatter plots were rather close together and there were no distinct groups. KMeans, having seen there were possibly 3 or more clusters (3 distinct groups of traffic volume) earlier, we were able to try K (number of clusters) within that region to achieve the ideal number of clusters with the highest silhouette score.
-
-There was an interesting discussion on having to drop highly correlated features before conducting PCA as having too many similar would increase the weightage of certain principal components, perhaps unfairly. Therefore, a PCA/KMeans clustering was conducted to examine if removing highly correlated features would give us better clustering (although my initial feel was that it wouldn't, if anything, it would result in less segregation).
-
-![clustered_airports]({{site-url}}/images/proj07_clustered_airport_dropped corr.png)
-
-4 clusters had the highest silhouette score 0.406 (slightly better, poorer performance of 0.384 with 5 clusters). The cluster plots above showed that 4 clusters may not be a good fit, particularly the yellow cluster.
-
-![3D_clusters]({{site-url}}/images/proj07_3D_pca_kmeans.png)
-
-A third component was added to the PCA (explained variance ratio of almost 0.82) and a 3D plot was created. As with all 3D plots, without the ability to rotate the plot in real-time, the plot couldn't covey much else over a 2D plot.
-
-### 6. Underlying trends within clusters (done with Tableau)
-
-![Clustered_arrival_delay]({{site-url}}/images/proj07_clustered_arrival_delays.png)
-
-![Depart_metric]({{site-url}}/images/proj07_depart_metric.png)
-
-We see that cluster 1 consisted of airports with the highest arrival delays, while cluster 2 consisted of airports with the highest cancellations and diversions. The fact that they belonged in 2 different clusters indicated that cancellations and diversions might not have been the reasons behind the delays.
-
-![Size_delay]({{site-url}}/images/proj07_size_delay.png)
-
-The above plot showed the relationship between traffic volume handled (size of cicrle) and average block delay. Again, there was no indication of high traffic volume correlating with higher delay.
-
-![Clustered_geo]({{site-url}}/images/proj07_clustered_airports.png)
-
-When we plotted the clusters in their respective geographical locations, we saw some light in explaining the delays. Cluster 1 (Orange) fell mostly along the eastern coast of Northern American continent (all the west south to Florida), perhaps this had something to do with weather as this is also the [Atlantic hurricane belt](http://www.nhc.noaa.gov/climo/).
-
-Cluster 2 (red), on the other hand, may not have correlation with geographical locations. This could be further looked into to examine the reason for their high numbers of cancellations and diversions.
-
-### 7. Conclusion and future work
-
-Some areas of future work could be:
-
-- Combine with weather data, especially hurricane data to investigate correlation with delays, perhaps looking into delays in hurricane months.
-
-- Examine more operational data from Cluster 2 (red) to investigate high level of cancellations and diversions.
-
-- Overlay flight paths on to the geographical clusters.
-
-Due to the nature of the data (yearly average), this project was only able to provide a high level clustering of the delays, without being able to dive deeper into the detailed reasons behind the delays. One other area to look into is optimizing efficiency in airport management and operations and some of the data we could look into could include individual flight details, employee and passenger surveys and employee operational data (hours worked, etc).
