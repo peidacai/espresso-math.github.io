@@ -32,7 +32,7 @@ However, my joy was short lived. While scrapping loopnet for commercial data, I 
 
 ### Experiencing Selenium and PhantomJS
 
-I had to turn my attention elsewhere, and found another promising website [cityfeet.com](http://www.cityfeet.com/cont/ny/new-york-retail-space#). As you probably can tell, this site uses AJAX and I had to dig in with Selenium and PhantomJS (with some additional lines of code to "wait" for rest of the page to load before continuing to scroll down). I found the code after searching on [stackoverflow](http://stackoverflow.com/questions/28928068/scroll-down-to-bottom-of-infinite-page-with-phantomjs-in-python)
+I had to turn my attention elsewhere, and found another promising website [cityfeet.com](http://www.cityfeet.com/cont/ny/new-york-retail-space#). As you probably can tell, this site uses AJAX and I had to dig in with Selenium and PhantomJS (with some additional lines of code to "wait" for rest of the page to load before continuing to scroll down). I found the code after searching on [stackoverflow](http://stackoverflow.com/questions/28928068/scroll-down-to-bottom-of-infinite-page-with-phantomjs-in-python).
 
 ```py
 # Infinite scrolling
