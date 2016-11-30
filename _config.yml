@@ -70,3 +70,6 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 gems:
   - jemoji
+
+# Google services
+google_analytics: UA-88278155-1
