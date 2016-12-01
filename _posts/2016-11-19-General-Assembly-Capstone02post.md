@@ -5,7 +5,7 @@ description: "Project description and web scraping"
 comments: true
 category: articles
 mathjax: false
-quote: Data is the new oil? No: Data is the new soil. ~ David McCandless
+quote: Data is the new oil? No: Data is the new soil. - David McCandless
 ---
 
 ![property_comic]({{site-url}}/images/property-commercial_real_estate-realtors-construction-chain_stores-scouting-aton2533_low.jpg)
