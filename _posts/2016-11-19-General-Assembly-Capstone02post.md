@@ -5,12 +5,15 @@ description: "Project description and web scraping"
 comments: true
 category: articles
 mathjax: false
-quote: "There are only three certainties in your life as a data scientist: death, taxes, and an inevitable git clusterfuck. You will find yourself typing git reset --hard and hitting enter while sighing at least once. That's OK. - Trey Causey"
+quote: Data is the new oil? No: Data is the new soil. ~ David McCandless
 ---
 
 ![property_comic]({{site-url}}/images/property-commercial_real_estate-realtors-construction-chain_stores-scouting-aton2533_low.jpg)
 
 ### Capstone Project: Introduction / Webscrapping
+
+
+{% include map.html latitude = '40.748660' longitude = '-73.985741' %}
 
 This week, in place of the weekly project, we began our journey into our capstone projects.
 
