@@ -5,7 +5,7 @@ description: "NYC Yellowcab data"
 comments: true
 category: articles
 mathjax: false
-quote: Data is the new oil? No: Data is the new soil. - David McCandless
+quote: "Data is the new oil? No: Data is the new soil. - David McCandless"
 ---
 
 ![property_comic]({{site-url}}/images/NYC_taxi.jpg)
