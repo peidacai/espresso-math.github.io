@@ -1,19 +1,16 @@
 ---
 layout: post-no-feature
-title: "GA Capstone 01"
-description: "Project description and web scraping"
+title: "GA Capstone 02"
+description: "NYC Yellowcab data"
 comments: true
 category: articles
 mathjax: false
 quote: Data is the new oil? No: Data is the new soil. - David McCandless
 ---
 
-![property_comic]({{site-url}}/images/property-commercial_real_estate-realtors-construction-chain_stores-scouting-aton2533_low.jpg)
+![property_comic]({{site-url}}/images/NYC_taxi.jpg)
 
-### Capstone Project: Introduction / Webscrapping
-
-
-{% include map.html latitude = '40.748660' longitude = '-73.985741' %}
+### Capstone Project: Wrangling NYC Yellow Cab data
 
 This week, in place of the weekly project, we began our journey into our capstone projects.
 
