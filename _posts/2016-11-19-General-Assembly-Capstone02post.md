@@ -10,15 +10,60 @@ quote: "Data is the new oil? No: Data is the new soil. - David McCandless"
 
 ![property_comic]({{site-url}}/images/NYC_taxi.jpg)
 
-### Capstone Project: Wrangling NYC Yellow Cab data
+### Capstone Project Part 2: Wrangling NYC Yellow Cab data
 
-This week, in place of the weekly project, we began our journey into our capstone projects.
+So, picking up from where I left off [previously](https://peidacai.github.io/articles/General-Assembly-Capstone01post), I web scraped [cityfeet website](http://www.cityfeet.com/cont/ny/new-york-retail-space#) (with much pain) for data on retail rental units available in New York City.
 
-My chosen project is "Predicting NYC retail rental prices with taxi data".
+This week, I will focus on the second part of the data for this project: New York City Yellow Cab data.
 
-### Aim / Impetus
+### Easy Peasy?
 
-I knew I wanted to do a project with geospatial data, however, after discussions with the bootcamp instructors, most geospatial analyses by themselves involves descriptive projects as opposed to predictive modelling. Therefore, in order to fulfil the bootcamp requirement, I had to find a way to marry the geospatial data with a predictive model.
+Thank goodness for [Taxi and Limousine Commission](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml)! They have generously provided anonymized taxi data online for anyone to use! The data is partitioned into months, starting from January 2009 to June 2016, separated into "yellow", "green" and "FHV" (For-Hire Vehicles).
+
+![nyc_tlc_data]({{site-url}}/images/nyc_tlc_data.png)
+
+I wanted to only look at yellow cab data for 2 main reasons: hardware performance limitations and yellow cab data should be the most representative of the customer volume in New York City (out of the 3). Data for each month is about 2 Gbytes and to account for fluctuations between months, I would need at least 12 months of data. Eventually, I settled for a year of yellow cab data (1% sample) for operational efficiency reasons. I parsed each 2.0 Gbyte file with some lines of code to take 1 of every 100 lines.
+
+```py
+factor = 100
+outlist = []
+
+filename = 'yellow_tripdata_2015-10.csv'
+
+in_file = '/Users/peidacai/Downloads/'+filename
+
+with open(in_file, 'r') as f:
+    count = 0
+    for line in f:
+        
+        if count % factor == 0:
+            count += 1
+            outlist.append(line)
+        else:
+            count += 1
+            pass
+f.close()
+
+out_file = 'mini-'+filename
+write_file = '/Users/peidacai/Desktop/NYC Taxi mini data/' + out_file
+
+with open(write_file, 'w') as f:
+    
+    f.writelines(outlist)
+f.close()
+```
+
+Even after taking in only 1% of a year's of only yellow cab data, I ended up with a dataframe of over 1.3 million rows.
+
+### EDA
+
+#### Trip distance
+
+First step in my EDA was to remove trips that had zero and negative distances. For the purpose of finding out the locations with the highest dropoff passengers, such trips were not useful. Although it could be interesting to investigate these trips for other purposes such as reliability of the logging machines and driver habits, but we will leave that for another time.
+
+![trip_dist]({{site-url}}/images/Taxi_trip_distance.png)
+
+Leaving out the top 0.1% of the longest trip distance, we see that
 
 From my experience in the retail food and beverage industry, I found the inspiration for my capstone project. In my previous life, I had the opportunity to launch 3 food retail stores in Singapore. And like all other retail business, location of stores ranked the highest in priority. However, many times, I found information lacking on the potential locations. Specifically, information on potential customer reach of the locations such as estimate of customer footcount, customer demographics, etc.
 
@@ -34,18 +79,7 @@ However, my joy was short lived. While scrapping loopnet for commercial data, I 
 
 I had to turn my attention elsewhere, and found another promising website [cityfeet.com](http://www.cityfeet.com/cont/ny/new-york-retail-space#). As you probably can tell, this site uses AJAX and I had to dig in with Selenium and PhantomJS (with some additional lines of code to "wait" for rest of the page to load before continuing to scroll down). I found the code after searching on [stackoverflow](http://stackoverflow.com/questions/28928068/scroll-down-to-bottom-of-infinite-page-with-phantomjs-in-python).
 
-```py
-# Infinite scrolling
 
-lastHeight = driver.execute_script("return document.body.scrollHeight")
-while True:
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(pause)
-    newHeight = driver.execute_script("return document.body.scrollHeight")
-    if newHeight == lastHeight:
-        break
-    lastHeight = newHeight
-```
 
 And after waiting a couple of hours, I finally managed to scrap over 1,000 listings, but after accounting for listings in NYC only, I was left with just under 400 listings. Not nearly enough for a good model, but a good place to start.
 
