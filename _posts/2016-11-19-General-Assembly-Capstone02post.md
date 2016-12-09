@@ -22,7 +22,7 @@ Thank goodness for [Taxi and Limousine Commission](http://www.nyc.gov/html/tlc/h
 
 ![nyc_tlc_data]({{site-url}}/images/nyc_tlc_data.png)
 
-I wanted to only look at yellow cab data for 2 main reasons: hardware performance limitations and yellow cab data should be the most representative of the customer volume in New York City (out of the 3). Data for each month is about 2 Gbytes and to account for fluctuations between months, I would need at least 12 months of data. Eventually, I settled for a year of yellow cab data (1% sample) for operational efficiency reasons. I parsed each 2.0 Gbyte file with some lines of code to take 1 of every 100 lines.
+I wanted to only look at yellow cab data for 2 main reasons: hardware performance limitations and yellow cab data should be the most representative of the customer volume in New York City (out of the 3). Data for each month is about 2 Gbytes and to account for seasonalities, I would need at least 12 months of data. Eventually, I settled for a year of yellow cab data (1% sample) for operational efficiency reasons. I parsed each 2.0 Gbyte file with some lines of code to take 1 of every 100 lines.
 
 ```py
 factor = 100
@@ -57,52 +57,63 @@ Even after taking in only 1% of a year's of only yellow cab data, I ended up wit
 
 ### EDA
 
-#### Trip distance
+### Trip distance
 
 First step in my EDA was to remove trips that had zero and negative distances. For the purpose of finding out the locations with the highest dropoff passengers, such trips were not useful. Although it could be interesting to investigate these trips for other purposes such as reliability of the logging machines and driver habits, but we will leave that for another time.
 
 ![trip_dist]({{site-url}}/images/Taxi_trip_distance.png)
 
-Leaving out the top 0.1% of the longest trip distance, we see that
+Leaving out the top 0.1% of the longest trip distance, we see that most of the trips were less than 15 miles long (i.e. within the manhattan).
 
-From my experience in the retail food and beverage industry, I found the inspiration for my capstone project. In my previous life, I had the opportunity to launch 3 food retail stores in Singapore. And like all other retail business, location of stores ranked the highest in priority. However, many times, I found information lacking on the potential locations. Specifically, information on potential customer reach of the locations such as estimate of customer footcount, customer demographics, etc.
+Looking at trip distance over 100 miles showed that the longest trip in the 1% data set was 52,000 miles, about 9 times the maximum straight line distance across the USA ([2,802 miles](https://www.reference.com/geography/distance-across-united-states-f6665a323ae29d9a)! Trips over 100 miles were removed.
 
-Therefore, I started looking around at data science projects which dealt with geospatial data in NYC and stumbled upon this [brilliant blog](http://toddwschneider.com/posts/analyzing-1-1-billion-nyc-taxi-and-uber-trips-with-a-vengeance/) by Todd W. Schneider. In his blog, Todd worked with over 1.1 billion rows of taxi and uber trip data with some breathe-taking visualizations! I was so inspired to attempt something like this before I realized that the size of the data he worked with was over 3.3 gigabytes! There was no way my aging MacBook Air with a measly 4GB RAM would be able to take such a beating. I had to think of a way to work around this. More on this in subsequent posts!
+### Average taxi speed
 
-### Web scrapping retail rental data
+A new feature was created using trip distance and trip duration to offer insights into the traffic conditions in NYC. Turned out that the fastest trip had a taxi which went at 3,333 miles per hour, about 4.34 times the speed of sound, about twice the max speed of an F15E Strike Eagle fighter jet ([though still a long way from the fast rocket](http://www.space.com/24701-how-long-does-it-take-to-get-to-mars.html)).
 
-Now that I had a clear direction, I had to start gathering the data. As mentioned, I faced a significant road block when trying to get taxi data, so I decided to put that aside for now and focus on gathering the rental data. I did a search for online resources of commercial rental properties in NYC and found one that was very promising from [loopnet](http://www.loopnet.com/), and the bonus was that they do not use AJAX (Asynchronous JavaScript and XML). While useful for users, websites which use AJAX make life for web scrappers much harder and more time-consuming.
+![taxi_avg_spd_pickup_hr]({{site-url}}/images/taxi_spd.png)
 
-However, my joy was short lived. While scrapping loopnet for commercial data, I managed to get over 1,000 listings in NYC. I was overjoyed! But once I put in practice one of my lessons learnt from the earlier projects, to drop duplicates, I was left with less than 50 listings! When I tried to expand my search in loopnet, they banned my IP address! :(
+After the sanity check, the plot below for mean speed by pickup hour was created. Interesting to note that the speed of taxis plummeted from 5 am onwards and never really recovered until about midnight. And from subway station to subway stations, you are really better off taking the subway, unless it is in the middle of the night.
 
-### Experiencing Selenium and PhantomJS
+### How much were New Yorkers tipping?
 
-I had to turn my attention elsewhere, and found another promising website [cityfeet.com](http://www.cityfeet.com/cont/ny/new-york-retail-space#). As you probably can tell, this site uses AJAX and I had to dig in with Selenium and PhantomJS (with some additional lines of code to "wait" for rest of the page to load before continuing to scroll down). I found the code after searching on [stackoverflow](http://stackoverflow.com/questions/28928068/scroll-down-to-bottom-of-infinite-page-with-phantomjs-in-python).
+![taxi_tips]({{site-url}}/images/taxi_tips.png)
 
+Tips data were only given for trips paid for by credit cards. Removing tips of over 100% (highest tip amount was 83,333%!), the most common amount New Yorkers tipped was about 20%.
 
+### Taxi rides by month
 
-And after waiting a couple of hours, I finally managed to scrap over 1,000 listings, but after accounting for listings in NYC only, I was left with just under 400 listings. Not nearly enough for a good model, but a good place to start.
+Shifting my attention back to dropoff counts, I examined distributions of taxi rides across months, day of week and specifically, dropoff counts by the hour.
 
-### Initial EDA
+![rides_by_month]({{site-url}}/images/taxi_rides_by_month.png)
 
-I proceed to create some quick plots of the rental data. I had included two plots of the most significant plots below, both histograms.
+### Taxi rides by day of week
 
-The first one below shows the floor space distribution of the available retail listings. It seemed as expected, with the majority of the listings near the 1,000 sqft range, since floor space is at a premium in NYC. There was an interesting development of substantial size (not shown in this histogram as it was limited to 20,000 sqft), and it turned out to be a new 500,000 sqft [development](http://rew-online.com/2016/11/02/blumenfeld-breaks-ground-on-east-harlem-rental-designed-by-bjarke-ingels-group/) in Harlem.
+![rides_by_day]({{site-url}}/images/taxi_rides_by_day.png)
 
-![properties_floor_area]({{site-url}}/images/capstone_part2_floor_area_histogram.png)
+### Number of dropoffs by hour
 
-The second, more worrying plot was the one below, which showed the distribution of prices per square feet per year. The plot looked very counter-intuitive as I was expecting to see a wider range of listing prices and a higher modal price (right now it seemed to be hovering around $30 per square foot per year). From news reports such as [this from CNBC](http://www.cnbc.com/2016/11/08/manhattan-retail-rents-dip-but-remain-near-record-highs.html), NYC remains the most expensive city to rent a retail property, with average lease price for ground floor units of \$973, up to \$3,138 for luxury rentals along Upper Fifth avenue. This was clearly not the story my scraped data was telling me.
+![dropoff_by_hour]({{site-url}}/images/taxi_dropoff_by_hour.png)
 
-![properties_psf]({{site-url}}/images/capstone_part2_psf_hist.png)
+The monthly and daily data seemed reasonable and there were not stark differences between them. However, there seemed to be distinct time blocks within the hourly data which I might have to take into consideration when building the predictive model eventually.
 
-### Sad revelation
+### Dropoff locations scatterplot
 
-And this was when I remembered that like Singapore, NYC probably control the listings of prime retail units. These units would usually be exclusively brokered by some large property consulting companies such as [CBRE](http://www.cbre.com/?utm_source=search&utm_medium=paidsearch&utm_campaign=wpp?utm_term=cbre) and  [Jones Lang LaSelle](http://www.us.jll.com/united-states/en-us) and will not be publicly available on third party websites. In order to have access to these listings, you would either have to be an agent or a leasee, neither of which I am keen to pose at the moment, considering the demands of the bootcamp, and well, life in general.
+![dropoff_scatter]({{site-url}}/images/dropoff_scatter.png)
 
-### Working with what I have
+I did a quick and dirty scatterplot of the dropoff locations, simply by using the latitude and longitude directly and plotting onto a 2D canvas, hence the skew in the plot. But this provided a really quick way of visualizing the density of the dropoffs and possible correlation to rental prices.
 
-Hence, my approach to this project was to plough ahead with the current list of properties which I found, to create a project based on proof-of-concept more than an actual working one since I can already see that the performance of the model will be poor with the low quality data going into the model.
+![dropoff_scatter_with_rent]({{site-url}}/images/taxi_dropoff_rental_locations.png)
 
-Nevertheless, conceptually, the project is still feasible and workable, just that it would perform to its full potential only with a high quality rental data input.
+The coloured circles were the available rental locations, green was expensive, yellow was medium and red was cheap. The sizes represented the available floor space of each unit. 
 
-With this, I shall end this blog post. In the next post, I will describe the joy and pain of dealing with taxi data!
+Three broad takeways:
+
+1. Harlem had some usually large available units, perhaps a large mall. More information was required.
+
+2. There were some meaningful correlation of prices with density. This provided more impetus for the project, further enhancing the hypothesis that taxi dropoff count might have some correlation to prices.
+
+3. No data for super prime locations near mid-town.
+
+After wrangling the taxi data, the next step would be to get social media, Yelp, data, to complete the dataset for this project. In the next blog post, I will share my experience scraping data from Yelp.
+
