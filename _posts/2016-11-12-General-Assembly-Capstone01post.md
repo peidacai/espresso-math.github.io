@@ -63,7 +63,7 @@ The second, more worrying plot was the one below, which showed the distribution 
 
 ### Sad revelation
 
-And this was when I remembered that like Singapore, NYC probably control the listings of prime retail units. These units would usually be exclusively brokered by some large property consulting companies such as [CBRE](http://www.cbre.com/?utm_source=search&utm_medium=paidsearch&utm_campaign=wpp?utm_term=cbre) and  [Jones Lang LaSelle](http://www.us.jll.com/united-states/en-us) and will not be publicly available on third party websites. In order to have access to these listings, you would either have to be an agent or a leasee, neither of which I am keen to pose at the moment, considering the demands of the bootcamp, and well, life in general.
+And this was when I remembered that like Singapore, NYC probably control the listings of prime retail units. These units would usually be exclusively brokered by some large property consulting companies such as [CBRE](http://www.cbre.com/?utm_source=search&utm_medium=paidsearch&utm_campaign=wpp?utm_term=cbre) and  [Jones Lang LaSalle](http://www.us.jll.com/united-states/en-us) and will not be publicly available on third party websites. In order to have access to these listings, you would either have to be an agent or a leasee, neither of which I am keen to pose at the moment, considering the demands of the bootcamp, and well, life in general.
 
 ### Working with what I have
 
