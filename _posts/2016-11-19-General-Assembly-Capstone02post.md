@@ -107,6 +107,8 @@ Nevertheless, conceptually, the project is still feasible and workable, just tha
 
 With this, I shall end this blog post. In the next post, I will describe the joy and pain of dealing with taxi data!
 
+{% if page.comments %}
 {% include disqus.html %}
+{% endif %}
 
 {% if page.comments %} • <a href="https://sgeos.github.io{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}
