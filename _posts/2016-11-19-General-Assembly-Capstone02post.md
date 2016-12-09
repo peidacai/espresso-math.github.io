@@ -73,7 +73,7 @@ A new feature was created using trip distance and trip duration to offer insight
 
 ![taxi_avg_spd_pickup_hr]({{site-url}}/images/taxi_spd.png)
 
-After the sanity check, the plot below for mean speed by pickup hour was created. Interesting to note that the speed of taxis plummeted from 5 am onwards and never really recovered until about midnight. And from subway station to subway stations, you are really better off taking the subway, unless it is in the middle of the night.
+After the sanity check, the plot above for mean speed by pickup hour was created. Interesting to note that the speed of taxis plummeted from 5 am onwards and never really recovered until about midnight. And from subway station to subway stations, you are really better off taking the subway, unless it is in the middle of the night.
 
 ### How much were New Yorkers tipping?
 
@@ -95,17 +95,21 @@ Shifting my attention back to dropoff counts, I examined distributions of taxi r
 
 ![dropoff_by_hour]({{site-url}}/images/taxi_dropoff_by_hour.png)
 
-The monthly and daily data seemed reasonable and there were not stark differences between them. However, there seemed to be distinct time blocks within the hourly data which I might have to take into consideration when building the predictive model eventually.
+The monthly and daily data seemed reasonable and there were no stark differences between them, hence possibly low predictive abilities. However, there seemed to be distinct time blocks within the hourly data which might have to be taken into consideration when building the predictive model.
+
+### Tying back to the project aim
+
+While it was very tempting to dive deeper into the taxi data, I had to remember to tie the analyses back to the aim of the project which was to use the taxi data to predict retail rental prices. Thus far, inituitively and analytically, dropoff counts by time and location seemed to be most relevant. I will zoomed into these features for the purpose of this project, though, if there was more time, it may be interesting to see if higher tipping percentages had any correlation with rental prices, as it may be an indication of customer spending power.
 
 ### Dropoff locations scatterplot
 
 ![dropoff_scatter]({{site-url}}/images/dropoff_scatter.png)
 
-I did a quick and dirty scatterplot of the dropoff locations, simply by using the latitude and longitude directly and plotting onto a 2D canvas, hence the skew in the plot. But this provided a really quick way of visualizing the density of the dropoffs and possible correlation to rental prices.
+With dropoff count by specific latitude and longitude, I did a quick and dirty scatterplot of the dropoff locations, simply by assuming a linear scale of latitude and longitude and plotting the value pairs onto a 2D canvas, hence the skew in the plot. But this provided a really quick way of visualizing the density of the dropoffs and possible correlation to rental prices.
 
 ![dropoff_scatter_with_rent]({{site-url}}/images/taxi_dropoff_rental_locations.png)
 
-The coloured circles were the available rental locations, green was expensive, yellow was medium and red was cheap. The sizes represented the available floor space of each unit. 
+Adding the rental prices overlay to the plot, the coloured markers were the available rental locations, green was expensive, yellow was medium and red was cheap. The sizes represented the available floor space of each unit. 
 
 Three broad takeways:
 
