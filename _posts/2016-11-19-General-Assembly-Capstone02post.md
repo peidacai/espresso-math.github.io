@@ -69,7 +69,7 @@ Looking at trip distance over 100 miles showed that the longest trip in the 1% d
 
 ### Average taxi speed
 
-A new feature was created using trip distance and trip duration to offer insights into the traffic conditions in NYC. Turned out that the fastest trip had a taxi which went at 3,333 miles per hour, about 4.34 times the speed of sound, about twice the max speed of an F15E Strike Eagle fighter jet ([though still a long way from the fast rocket](http://www.space.com/24701-how-long-does-it-take-to-get-to-mars.html)).
+A new feature was created using trip distance and trip duration to offer insights into the traffic conditions in NYC. Turned out that the fastest trip had a taxi which went at 3,333 miles per hour, about 4.3 times the speed of sound, or about twice the max speed of an F15E Strike Eagle fighter jet.
 
 ![taxi_avg_spd_pickup_hr]({{site-url}}/images/taxi_spd.png)
 
