@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Project04"
+title: "General Assembly (NYC) Weekly Project 04"
 description: "Web scrape and predict Data Scientists' salaries"
 comments: true
 category: articles
