@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Capstone 01"
+title: "General Assembly (NYC) Capstone Project 01"
 description: "Project description and web scraping"
 comments: true
 category: articles
