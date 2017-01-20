@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "General Assembly Weekly Project 07"
+title: "General Assembly (NYC) Weekly Project 07"
 description: "Clustering airports delay"
 comments: true
 category: articles
