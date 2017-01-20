@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Project01"
+title: "General Assembly (NYC) Weekly Project 01"
 description: "An introductory data science project examining distributions of 2001 SAT scores in USA."
 comments: true
 category: articles
