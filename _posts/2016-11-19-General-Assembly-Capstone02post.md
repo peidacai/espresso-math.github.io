@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
-title: "GA Capstone 02"
-description: "NYC Yellowcab data"
+title: "General Assembly (NYC) Capstone Project 02"
+description: "Exploring NYC Yellowcab data"
 comments: true
 category: articles
 mathjax: false
