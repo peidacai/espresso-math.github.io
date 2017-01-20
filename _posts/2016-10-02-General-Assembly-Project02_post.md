@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Project02"
+title: "General Assembly (NYC) Weekly Project 02"
 description: "Exploratory data analysis using Python on Year 2000 Billboard Top 100 chart"
 comments: true
 category: articles
