@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Project03"
+title: "General Assembly (NYC) Weekly Project 03"
 description: "Business Intelligence with Data Science"
 comments: true
 category: articles
