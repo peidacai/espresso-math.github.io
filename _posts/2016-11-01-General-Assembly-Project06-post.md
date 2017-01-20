@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: "General Assembly (NYC) Weekly Project 06"
-description: "IMDB Movie ratings"
+description: "Predicting IMDB Movie ratings"
 comments: true
 category: articles
 mathjax: false
