@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
-title: "How much is a Yelp review worth in New York City?"
-description: "GA Capstone 03"
+title: "General Assembly (NYC) Capstone Project 03"
+description: "How much is a Yelp review worth in New York City?"
 comments: true
 category: articles
 mathjax: false
