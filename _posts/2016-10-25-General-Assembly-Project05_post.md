@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Project05"
+title: "General Assembly (NYC) Weekly Project 05"
 description: "Data science for disaster relief"
 comments: true
 category: articles
