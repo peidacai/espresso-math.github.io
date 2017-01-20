@@ -1,6 +1,6 @@
 ---
 layout: post-no-feature
-title: "GA Project06"
+title: "General Assembly (NYC) Weekly Project 06"
 description: "IMDB Movie ratings"
 comments: true
 category: articles
