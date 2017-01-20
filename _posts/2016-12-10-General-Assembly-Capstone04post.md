@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
-title: "Predicting NYC retail rental prices. Can we do better?"
-description: "GA Capstone 04"
+title: "General Assembly (NYC) Capstone 04"
+description: "Predicting NYC retail rental prices. Can we do better?"
 comments: true
 category: articles
 mathjax: false
