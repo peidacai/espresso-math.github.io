@@ -8,7 +8,7 @@ mathjax: false
 quote: ""
 ---
 
-![property_comic]({{site-url}}/images/NYC_taxi.jpg)
+![yelp_monopoly]({{site-url}}/images/monopoly_yelp.jpg)
 
 ### Capstone Project Part 3: Attempting to quantify reputation
 
