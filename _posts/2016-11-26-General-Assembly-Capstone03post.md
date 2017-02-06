@@ -5,7 +5,7 @@ description: "How much is a Yelp review worth in New York City?"
 comments: true
 category: articles
 mathjax: false
-quote: "If we have data, let’s look at data. If all we have are opinions, let’s go with mine." - Jim Barksdale
+quote: "If we have data, let’s look at data. If all we have are opinions, let’s go with mine. - Jim Barksdale"
 ---
 
 ![yelp_monopoly]({{site-url}}/images/monopoly_yelp.jpg)
