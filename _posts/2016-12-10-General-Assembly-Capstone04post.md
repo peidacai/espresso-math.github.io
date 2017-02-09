@@ -28,10 +28,7 @@ Getting the map to center on a specific latitude and longitude and at a certain 
 ![rental_price_factors_2]({{site-url}}/images/rental_price_factors_2.png)
 
 
-
-
-
-<iframe width="560" height="315" src= frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe width="560" height="315" src="http://www.google.com" frameborder="0"></iframe>
 
 ### Way ahead
 
