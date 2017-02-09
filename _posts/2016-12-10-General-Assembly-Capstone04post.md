@@ -18,7 +18,7 @@ In my previous three blog posts, I covered the three main sources of data for my
 
 I spent quite some time figuring out how to use the folium package in Python to visualize the geospatial data, somehow combined all three data sources into one big visualization which is offer limited interactive functions.
 
-*Insert html window here for folium map*
+<link rel="stylesheet" href="{{site-url}}/_includes/map.html">
 
 Getting the map to center on a specific latitude and longitude and at a certain zoom level is rather straight-forward.
 
@@ -29,7 +29,9 @@ Getting the map to center on a specific latitude and longitude and at a certain 
 
 
 
-<iframe width="560" height="315" src={{site-url}}/_includes/map.html frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+
+<iframe width="560" height="315" src= frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 ### Way ahead
 
