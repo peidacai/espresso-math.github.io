@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: "General Assembly (NYC) Capstone 04"
-description: "Predicting NYC retail rental prices. Can we do better?"
+description: "Predicting NYC retail rental prices. Did we do better?"
 comments: true
 category: articles
 mathjax: false
@@ -23,11 +23,28 @@ I spent quite some time figuring out how to use the folium package in Python to 
 
 Getting the map to center on a specific latitude and longitude and at a certain zoom level is rather straight-forward.
 
+### Modeling Approach
+
+![model_approach]({{site-url}}/images/capstone_model_approach.png)
+
+A baseline model was created using traditional rental data: (1) Available floorspace; and (2) Zipcode.
+
+A second model was created with Yelp business review data added as features.
+
+A third model was created with Yellowcab dropoff zipcode count data.
+
+Finally, a last model was created with the dropoff times binned into 4 6-hourly time windows.
+
+Recursive feature selection was performed on the final model to determined the feature importance.
+
 ### Performance of predictive models
 
+![model_performance]({{site-url}}/images/capstone_model_performance.png)
 
-![rental_price_factors_2]({{site-url}}/images/rental_price_factors_2.png)
+### Feature Importance
 
-### Way ahead
+![top_5_features]({{site-url}}/images/capstone_top_5_features.png)
+
+### Conclusion and Way ahead
 
 
